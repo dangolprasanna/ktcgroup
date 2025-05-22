@@ -1,9 +1,9 @@
-
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import { motion } from 'framer-motion';
 import MotionWrapper from '@/components/MotionWrapper';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
   const services = [
@@ -358,27 +358,29 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {services.map((service, index) => (
               <MotionWrapper key={index} delay={index * 0.1}>
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
-                  {service.image && (
-                    <div className="w-full h-60 overflow-hidden">
-                      <div 
-                        className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
-                        style={{ backgroundImage: `url(${service.image})` }}
-                      ></div>
-                    </div>
-                  )}
-                  <div className="p-6">
-                    <div className="flex">
-                      <div className="w-12 h-12 rounded-full bg-khum-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                        <div className="text-khum-primary">{service.icon}</div>
+                <Link to={`/services/${index}`} className="block">
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                    {service.image && (
+                      <div className="w-full h-60 overflow-hidden">
+                        <div 
+                          className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
+                          style={{ backgroundImage: `url(${service.image})` }}
+                        ></div>
                       </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-khum-primary mb-3">{service.title}</h3>
-                        <p className="text-gray-600">{service.description}</p>
+                    )}
+                    <div className="p-6">
+                      <div className="flex">
+                        <div className="w-12 h-12 rounded-full bg-khum-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                          <div className="text-khum-primary">{service.icon}</div>
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-khum-primary mb-3">{service.title}</h3>
+                          <p className="text-gray-600">{service.description}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </MotionWrapper>
             ))}
           </div>
