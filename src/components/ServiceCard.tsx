@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -10,9 +9,13 @@ interface ServiceCardProps {
   icon: React.ReactNode;
   link?: string;
   image?: string;
+  serviceId?: number;
 }
 
-const ServiceCard = ({ title, description, icon, link = "/services", image }: ServiceCardProps) => {
+const ServiceCard = ({ title, description, icon, link = "/services", image, serviceId }: ServiceCardProps) => {
+  // If serviceId is provided, create a direct link to the service detail page
+  const serviceLink = serviceId !== undefined ? `/services/${serviceId}` : link;
+  
   return (
     <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }}>
       <Card className="border-0 shadow-sm hover:shadow-md transition-shadow overflow-hidden h-full flex flex-col">
@@ -35,7 +38,7 @@ const ServiceCard = ({ title, description, icon, link = "/services", image }: Se
         </CardContent>
         <CardFooter>
           <Button variant="ghost" className="text-khum-secondary hover:text-khum-primary p-0">
-            <Link to={link} className="flex items-center">
+            <Link to={serviceLink} className="flex items-center">
               Learn More
               <svg
                 xmlns="http://www.w3.org/2000/svg"

@@ -14,6 +14,14 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import CounterCard from '@/components/CounterCard';
 
+// Define the mapping between featured services and their service IDs
+const serviceIdMapping = {
+  "Air-Conditioning & Ventilation": 0,  // Maps to "Air-Conditioning, Ventilations & Air Filtration Systems"
+  "Electrical Installation": 2,        // Maps to "Electricity Transmission & Control Equipment Installation"
+  "Plumbing & Sanitary": 3,           // Maps to "Plumbing & Sanitary Installation"
+  "Painting & Finishing": 5,          // Maps to "Painting Contracting"
+};
+
 const Index = () => {
   // Sample service data
   const featuredServices = [
@@ -313,6 +321,7 @@ const Index = () => {
                 description={service.description} 
                 icon={service.icon}
                 image={service.image}
+                serviceId={serviceIdMapping[service.title]}
               />
             ))}
           </div>
