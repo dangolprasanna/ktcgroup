@@ -19,7 +19,7 @@ const CallToAction = () => {
               <Button size="lg" className="bg-white text-khum-primary hover:bg-gray-100 rounded-full px-8 shadow-lg">
                 <Link to="/contact">Request a Quote</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 rounded-full px-8">
+              <Button size="lg" variant="outline" className="border-white text-black hover:bg-white/10 rounded-full px-8">
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>

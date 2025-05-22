@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -24,21 +23,11 @@ const NavBar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-gray-700 hover:text-khum-primary font-medium transition-colors">
-              Home
-            </Link>
-            <Link to="/about" className="text-gray-700 hover:text-khum-primary font-medium transition-colors">
-              About Us
-            </Link>
-            <Link to="/services" className="text-gray-700 hover:text-khum-primary font-medium transition-colors">
-              Services
-            </Link>
-            <Link to="/portfolio" className="text-gray-700 hover:text-khum-primary font-medium transition-colors">
-              Portfolio
-            </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-khum-primary font-medium transition-colors">
-              Contact
-            </Link>
+            <Link to="/" className="nav-link">Home</Link>
+            <Link to="/about" className="nav-link">About Us</Link>
+            <Link to="/services" className="nav-link">Services</Link>
+            <Link to="/portfolio" className="nav-link">Portfolio</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
             <Button className="bg-khum-primary hover:bg-khum-secondary text-white ml-2">
               <Link to="/contact">Request Quote</Link>
             </Button>
@@ -110,6 +99,32 @@ const NavBar = () => {
           </div>
         </div>
       )}
+      <style>{`
+        .nav-link {
+          position: relative;
+          color: #374151;
+          font-weight: 500;
+          transition: color 0.2s;
+        }
+        .nav-link:hover {
+          color: #0B3C5D;
+        }
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -4px;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, #1D7874 0%, #328CC1 100%);
+          border-radius: 2px;
+          transform: scaleX(0);
+          transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+        }
+        .nav-link:hover::after {
+          transform: scaleX(1);
+        }
+      `}</style>
     </nav>
   );
 };

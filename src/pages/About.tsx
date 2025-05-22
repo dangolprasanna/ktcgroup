@@ -1,7 +1,7 @@
-
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
+import { motion } from 'framer-motion';
 
 const About = () => {
   return (
@@ -9,12 +9,33 @@ const About = () => {
       <NavBar />
 
       {/* About Hero */}
-      <div className="bg-khum-primary py-12 md:py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">About Us</h1>
-          <p className="text-gray-100 max-w-2xl mx-auto">
+      <div className="relative bg-khum-primary py-12 md:py-20 overflow-hidden">
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-khum-primary to-khum-accent opacity-90 z-0"></div>
+        {/* Animated Pattern */}
+        <motion.div 
+          className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px] z-0"
+          initial={{ scale: 1.1, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.1 }}
+          transition={{ duration: 1.5, ease: 'easeOut' }}
+        ></motion.div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <motion.h1
+            className="text-3xl md:text-5xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            About Us
+          </motion.h1>
+          <motion.p
+            className="text-gray-100 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             Learn more about KHUM TECHNICAL AND CLEANING SERVICES L.L.C S.O.C and our commitment to excellence.
-          </p>
+          </motion.p>
         </div>
       </div>
 
