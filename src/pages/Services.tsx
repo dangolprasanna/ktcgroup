@@ -2,6 +2,8 @@
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
+import { motion } from 'framer-motion';
+import MotionWrapper from '@/components/MotionWrapper';
 
 const Services = () => {
   const services = [
@@ -27,6 +29,7 @@ const Services = () => {
           <path d="M6.6 15.6A2 2 0 1 0 10 17v-5" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1606225457115-9b0de873c5db?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "Lifts & Escalators Contracting",
@@ -57,6 +60,7 @@ const Services = () => {
           <path d="M8 14h.01" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1554413650-308061a4c247?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "Electricity Transmission & Control Equipment Installation",
@@ -85,6 +89,7 @@ const Services = () => {
           <circle cx="12" cy="12" r="5" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1584964139384-7f7d0b7c1eb9?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "Plumbing & Sanitary Installation",
@@ -118,6 +123,7 @@ const Services = () => {
           <path d="M19 19v3" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "Floor & Wall Tiling Works",
@@ -145,6 +151,7 @@ const Services = () => {
           <path d="m8 6 8 8" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "Painting Contracting",
@@ -169,6 +176,7 @@ const Services = () => {
           <path d="M18 16h4" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "Carpentry & Wood Flooring Works",
@@ -192,6 +200,7 @@ const Services = () => {
           <path d="M5 10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1559553156-2e97137af16f?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "False Ceiling & Light Partitions Installation",
@@ -214,6 +223,7 @@ const Services = () => {
           <path d="M8 22v-2c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2H8Z" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1594125674956-61a9b49c8eeb?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "Sanitary Installation & Pipes Repairing",
@@ -234,6 +244,7 @@ const Services = () => {
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1576427099042-7c7c9c9c1d4f?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "Plaster Works",
@@ -261,6 +272,7 @@ const Services = () => {
           <path d="m8 6 8 8" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1571989545580-1f8c83a07428?q=80&w=800&auto=format&fit=crop"
     },
     {
       title: "Building Cleaning Services",
@@ -291,6 +303,7 @@ const Services = () => {
           <path d="M8 14h.01" />
         </svg>
       ),
+      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop"
     },
   ];
 
@@ -299,63 +312,103 @@ const Services = () => {
       <NavBar />
 
       {/* Services Hero */}
-      <div className="bg-khum-primary py-12 md:py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Our Services</h1>
-          <p className="text-gray-100 max-w-2xl mx-auto">
+      <div className="bg-gradient-to-r from-khum-primary to-khum-accent py-20 md:py-28 relative overflow-hidden">
+        {/* Overlay Pattern */}
+        <motion.div 
+          className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.1 }}
+          transition={{ duration: 1.5 }}
+        ></motion.div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <motion.h1 
+            className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            Our Services
+          </motion.h1>
+          <motion.p 
+            className="text-gray-100 max-w-2xl mx-auto text-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             Comprehensive technical and cleaning solutions for all your property needs.
-          </p>
+          </motion.p>
         </div>
       </div>
 
       {/* Services List */}
-      <section className="py-16">
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-khum-primary mb-4">
-              Comprehensive Technical & Cleaning Services
-            </h2>
-            <p className="text-gray-600">
-              At KHUM TECHNICAL AND CLEANING SERVICES, we offer a wide range of professional services to meet all your property maintenance and installation needs under one roof. Our experienced team delivers high-quality results for every project.
-            </p>
-          </div>
+          <MotionWrapper>
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-khum-primary mb-6 tracking-tight">
+                Comprehensive Technical & Cleaning Services
+              </h2>
+              <p className="text-gray-600 text-lg">
+                At KHUM TECHNICAL AND CLEANING SERVICES, we offer a wide range of professional services to meet all your property maintenance and installation needs under one roof. Our experienced team delivers high-quality results for every project.
+              </p>
+            </div>
+          </MotionWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
-                <div className="flex">
-                  <div className="w-12 h-12 rounded-full bg-khum-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
-                    <div className="text-khum-primary">{service.icon}</div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-khum-primary mb-3">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
+              <MotionWrapper key={index} delay={index * 0.1}>
+                <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
+                  {service.image && (
+                    <div className="w-full h-60 overflow-hidden">
+                      <div 
+                        className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
+                        style={{ backgroundImage: `url(${service.image})` }}
+                      ></div>
+                    </div>
+                  )}
+                  <div className="p-6">
+                    <div className="flex">
+                      <div className="w-12 h-12 rounded-full bg-khum-primary/10 flex items-center justify-center mr-4 flex-shrink-0">
+                        <div className="text-khum-primary">{service.icon}</div>
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-khum-primary mb-3">{service.title}</h3>
+                        <p className="text-gray-600">{service.description}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </MotionWrapper>
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-khum-primary mb-4">
-              Why Choose Us
-            </h2>
-            <p className="text-gray-600">
-              When you choose KHUM TECHNICAL AND CLEANING SERVICES, you're selecting a partner committed to excellence and customer satisfaction.
-            </p>
-          </div>
+          <MotionWrapper>
+            <div className="max-w-3xl mx-auto text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-khum-primary mb-6 tracking-tight">
+                Why Choose Us
+              </h2>
+              <p className="text-gray-600 text-lg">
+                When you choose KHUM TECHNICAL AND CLEANING SERVICES, you're selecting a partner committed to excellence and customer satisfaction.
+              </p>
+            </div>
+          </MotionWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-khum-primary/10 rounded-full flex items-center justify-center mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-khum-primary/10 to-khum-accent/10 rounded-full flex items-center justify-center mb-6">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
-                  className="h-6 w-6 text-khum-primary" 
+                  className="h-8 w-8 text-khum-primary" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -368,17 +421,21 @@ const Services = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-khum-primary">Experienced Team</h3>
+              <h3 className="text-xl font-semibold mb-4 text-khum-primary">Experienced Team</h3>
               <p className="text-gray-600">
                 Our team consists of skilled professionals with years of experience in their respective fields, ensuring high-quality service delivery.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-khum-primary/10 rounded-full flex items-center justify-center mb-4">
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-khum-primary/10 to-khum-accent/10 rounded-full flex items-center justify-center mb-6">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
-                  className="h-6 w-6 text-khum-primary" 
+                  className="h-8 w-8 text-khum-primary" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -391,17 +448,21 @@ const Services = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-khum-primary">Quality Guarantee</h3>
+              <h3 className="text-xl font-semibold mb-4 text-khum-primary">Quality Guarantee</h3>
               <p className="text-gray-600">
                 We stand behind our work with a quality guarantee, ensuring that every project meets our high standards and your expectations.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-              <div className="w-12 h-12 bg-khum-primary/10 rounded-full flex items-center justify-center mb-4">
+            <motion.div 
+              className="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+              whileHover={{ y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-khum-primary/10 to-khum-accent/10 rounded-full flex items-center justify-center mb-6">
                 <svg 
                   xmlns="http://www.w3.org/2000/svg" 
-                  className="h-6 w-6 text-khum-primary" 
+                  className="h-8 w-8 text-khum-primary" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -414,11 +475,11 @@ const Services = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold mb-2 text-khum-primary">Timely Service</h3>
+              <h3 className="text-xl font-semibold mb-4 text-khum-primary">Timely Service</h3>
               <p className="text-gray-600">
                 We respect your time and schedule, ensuring that all services are delivered promptly and projects are completed on schedule.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

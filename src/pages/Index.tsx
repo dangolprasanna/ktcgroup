@@ -6,6 +6,13 @@ import Footer from '@/components/Footer';
 import ServiceCard from '@/components/ServiceCard';
 import Testimonial from '@/components/Testimonial';
 import CallToAction from '@/components/CallToAction';
+import ImageGrid from '@/components/ImageGrid';
+import FeaturesSection from '@/components/FeaturesSection';
+import Divider from '@/components/Divider';
+import { motion } from 'framer-motion';
+import MotionWrapper from '@/components/MotionWrapper';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
   // Sample service data
@@ -31,7 +38,8 @@ const Index = () => {
           <path d="M18.3 17.7a2.5 2.5 0 0 1-3.16 3.83 2.53 2.53 0 0 1-1.14-2V12" />
           <path d="M6.6 15.6A2 2 0 1 0 10 17v-5" />
         </svg>
-      )
+      ),
+      image: "https://images.unsplash.com/photo-1605374005175-fa0a768522a3?q=80&w=600&auto=format&fit=crop"
     },
     {
       title: "Electrical Installation",
@@ -59,7 +67,8 @@ const Index = () => {
           <path d="m7.76 7.76-2.83-2.83" />
           <circle cx="12" cy="12" r="5" />
         </svg>
-      )
+      ),
+      image: "https://images.unsplash.com/photo-1584964139384-7f7d0b7c1eb9?q=80&w=600&auto=format&fit=crop"
     },
     {
       title: "Plumbing & Sanitary",
@@ -92,7 +101,8 @@ const Index = () => {
           <path d="M19 2v3" />
           <path d="M19 19v3" />
         </svg>
-      )
+      ),
+      image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=600&auto=format&fit=crop"
     },
     {
       title: "Painting & Finishing",
@@ -116,7 +126,8 @@ const Index = () => {
           <path d="M2 16h6" />
           <path d="M18 16h4" />
         </svg>
-      )
+      ),
+      image: "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?q=80&w=600&auto=format&fit=crop"
     }
   ];
 
@@ -142,174 +153,204 @@ const Index = () => {
     }
   ];
 
+  // Sample project images
+  const projectImages = [
+    { 
+      src: "https://images.unsplash.com/photo-1595844730298-b960ff98fee0?q=80&w=800&auto=format&fit=crop", 
+      alt: "AC Installation Project" 
+    },
+    { 
+      src: "https://images.unsplash.com/photo-1565183997392-2f6f122e5912?q=80&w=800&auto=format&fit=crop", 
+      alt: "Electrical Installation" 
+    },
+    { 
+      src: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb38?q=80&w=800&auto=format&fit=crop", 
+      alt: "Plumbing Work" 
+    },
+    { 
+      src: "https://images.unsplash.com/photo-1521783593447-5702b9bfd267?q=80&w=800&auto=format&fit=crop", 
+      alt: "Building Cleaning" 
+    },
+  ];
+
+  // Company features
+  const features = [
+    {
+      title: "Quality Service",
+      description: "We deliver exceptional quality in all our technical and cleaning services, ensuring client satisfaction with every project.",
+      icon: (
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="h-8 w-8 text-khum-primary" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
+          />
+        </svg>
+      )
+    },
+    {
+      title: "Professional Team",
+      description: "Our experienced professionals are skilled, certified, and dedicated to providing the highest standards of service.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-8 w-8 text-khum-primary"
+        >
+          <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z" />
+          <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" />
+          <path d="M4 15v-3a6 6 0 0 1 6-6h0" />
+          <path d="M14 6h0a6 6 0 0 1 6 6v3" />
+        </svg>
+      )
+    },
+    {
+      title: "Timely Completion",
+      description: "We respect your time and deliver services promptly, ensuring minimal disruption to your business or residential life.",
+      icon: (
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          className="h-8 w-8 text-khum-primary" 
+          fill="none" 
+          viewBox="0 0 24 24" 
+          stroke="currentColor"
+        >
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" 
+          />
+        </svg>
+      )
+    },
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <NavBar />
       <Hero />
 
       {/* About Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-khum-primary mb-4">
-              Your Trusted Technical & Cleaning Partner in Dubai
-            </h2>
-            <p className="max-w-2xl mx-auto text-gray-600">
-              KHUM TECHNICAL AND CLEANING SERVICES L.L.C S.O.C is a One Person Limited Liability Company 
-              owned by Mr. KHUM PRASAD BHANDARI. We provide comprehensive technical and cleaning services 
-              with a commitment to quality, reliability, and customer satisfaction.
-            </p>
-          </div>
+          <MotionWrapper>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-khum-primary mb-6 tracking-tight">
+                Your Trusted Technical & Cleaning Partner in Dubai
+              </h2>
+              <p className="max-w-3xl mx-auto text-gray-600 text-lg">
+                KHUM TECHNICAL AND CLEANING SERVICES L.L.C S.O.C is a One Person Limited Liability Company 
+                owned by Mr. KHUM PRASAD BHANDARI. We provide comprehensive technical and cleaning services 
+                with a commitment to quality, reliability, and customer satisfaction.
+              </p>
+            </div>
+          </MotionWrapper>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center">
-              <div className="w-16 h-16 mx-auto bg-khum-primary/10 rounded-full flex items-center justify-center mb-4">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-8 w-8 text-khum-primary" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" 
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-2 text-khum-primary">Quality Service</h3>
-              <p className="text-gray-600">
-                We deliver exceptional quality in all our technical and cleaning services, ensuring 
-                client satisfaction with every project.
+          <FeaturesSection features={features} className="max-w-5xl mx-auto" />
+        </div>
+      </section>
+
+      {/* Portfolio Preview Section */}
+      <section className="py-24">
+        <div className="container mx-auto px-4">
+          <MotionWrapper>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-khum-primary mb-6 tracking-tight">
+                Our Recent Projects
+              </h2>
+              <p className="max-w-3xl mx-auto text-gray-600 text-lg mb-12">
+                Take a look at some of our latest technical and cleaning projects across Dubai. 
+                We take pride in delivering quality results for every client.
               </p>
             </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center">
-              <div className="w-16 h-16 mx-auto bg-khum-primary/10 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-8 w-8 text-khum-primary"
-                >
-                  <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z" />
-                  <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5" />
-                  <path d="M4 15v-3a6 6 0 0 1 6-6h0" />
-                  <path d="M14 6h0a6 6 0 0 1 6 6v3" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-2 text-khum-primary">Professional Team</h3>
-              <p className="text-gray-600">
-                Our experienced professionals are skilled, certified, and dedicated to providing 
-                the highest standards of service.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center">
-              <div className="w-16 h-16 mx-auto bg-khum-primary/10 rounded-full flex items-center justify-center mb-4">
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className="h-8 w-8 text-khum-primary" 
-                  fill="none" 
-                  viewBox="0 0 24 24" 
-                  stroke="currentColor"
-                >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" 
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-medium mb-2 text-khum-primary">Timely Completion</h3>
-              <p className="text-gray-600">
-                We respect your time and deliver services promptly, ensuring minimal disruption 
-                to your business or residential life.
-              </p>
-            </div>
+          </MotionWrapper>
+          
+          <ImageGrid images={projectImages} />
+          
+          <div className="text-center mt-12">
+            <Button variant="outline" className="rounded-full border-khum-primary text-khum-primary px-8 hover:bg-khum-primary hover:text-white">
+              <Link to="/portfolio">View All Projects</Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-16">
+      <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-khum-primary mb-4">
-              Our Services
-            </h2>
-            <p className="max-w-2xl mx-auto text-gray-600">
-              We offer a wide range of technical and cleaning services to meet all your maintenance 
-              and installation needs under one roof.
-            </p>
-          </div>
+          <MotionWrapper>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-khum-primary mb-6 tracking-tight">
+                Our Services
+              </h2>
+              <p className="max-w-3xl mx-auto text-gray-600 text-lg mb-12">
+                We offer a wide range of technical and cleaning services to meet all your maintenance 
+                and installation needs under one roof.
+              </p>
+            </div>
+          </MotionWrapper>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredServices.map((service, index) => (
               <ServiceCard 
                 key={index} 
                 title={service.title} 
                 description={service.description} 
-                icon={service.icon} 
+                icon={service.icon}
+                image={service.image}
               />
             ))}
           </div>
           
-          <div className="text-center mt-10">
-            <a 
-              href="/services" 
-              className="text-khum-secondary hover:text-khum-primary font-medium inline-flex items-center transition-colors"
-            >
-              View All Services
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-5 w-5 ml-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M9 5l7 7-7 7" 
-                />
-              </svg>
-            </a>
+          <div className="text-center mt-16">
+            <Button className="rounded-full bg-khum-primary hover:bg-khum-primary/90 px-8">
+              <Link to="/services">View All Services</Link>
+            </Button>
           </div>
         </div>
       </section>
 
+      <Divider />
+
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-khum-primary mb-4">
-              What Our Clients Say
-            </h2>
-            <p className="max-w-2xl mx-auto text-gray-600">
-              Don't just take our word for it. Here's what our satisfied clients have to say about our services.
-            </p>
-          </div>
+          <MotionWrapper>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-khum-primary mb-6 tracking-tight">
+                What Our Clients Say
+              </h2>
+              <p className="max-w-3xl mx-auto text-gray-600 text-lg">
+                Don't just take our word for it. Here's what our satisfied clients have to say about our services.
+              </p>
+            </div>
+          </MotionWrapper>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
-              <Testimonial 
-                key={index}
-                quote={testimonial.quote}
-                author={testimonial.author}
-                position={testimonial.position}
-                company={testimonial.company}
-              />
+              <MotionWrapper key={index} delay={index * 0.2}>
+                <Testimonial 
+                  quote={testimonial.quote}
+                  author={testimonial.author}
+                  position={testimonial.position}
+                  company={testimonial.company}
+                />
+              </MotionWrapper>
             ))}
           </div>
         </div>
