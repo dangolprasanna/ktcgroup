@@ -12,6 +12,7 @@ import { motion } from 'framer-motion';
 import MotionWrapper from '@/components/MotionWrapper';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import CounterCard from '@/components/CounterCard';
 
 const Index = () => {
   // Sample service data
@@ -323,6 +324,28 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Counter Section */}
+      <MotionWrapper>
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <CounterCard label="Clients" target={250} icon={
+                <svg className="h-8 w-8 mx-auto text-khum-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87m9-7A4 4 0 1 1 7 7a4 4 0 0 1 8 0z" /></svg>
+              } />
+              <CounterCard label="Workers" target={80} icon={
+                <svg className="h-8 w-8 mx-auto text-khum-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm6 14v-2a4 4 0 0 0-3-3.87M6 21v-2a4 4 0 0 1 3-3.87" /></svg>
+              } />
+              <CounterCard label="Services" target={15} icon={
+                <svg className="h-8 w-8 mx-auto text-khum-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 21l3-1.5L15 21l-.75-4M4 4h16v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4zm0 0V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" /></svg>
+              } />
+              <CounterCard label="Satisfaction" target={100} suffix="%" icon={
+                <svg className="h-8 w-8 mx-auto text-khum-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 0 1-5.656 0M9 9h.01M15 9h.01M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" /></svg>
+              } />
+            </div>
+          </div>
+        </section>
+      </MotionWrapper>
 
       <Divider />
 
