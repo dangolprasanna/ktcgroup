@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -44,21 +43,34 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for your inquiry. We'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
-      });
-    }, 1000);
+    // Format the message for WhatsApp
+    const whatsappMessage = `Name: ${formData.name}%0A` + 
+      `Email: ${formData.email}%0A` +
+      `Phone: ${formData.phone}%0A` +
+      `Service Required: ${formData.service}%0A` +
+      `Message: ${formData.message}`;
+
+    // WhatsApp API URL
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=9779840807275&text=${whatsappMessage}`;
+    
+    // Open WhatsApp in a new window
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success toast
+    toast({
+      title: "Redirecting to WhatsApp",
+      description: "You will be redirected to WhatsApp to send your message.",
+    });
+    
+    setIsSubmitting(false);
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: "",
+    });
   };
 
   return (
@@ -104,11 +116,15 @@ const ContactForm = () => {
           />
         </div>
       </div>
-      
+
       <div>
-        <Label htmlFor="service">Service of Interest</Label>
-        <Select value={formData.service} onValueChange={handleServiceChange}>
-          <SelectTrigger id="service" className="mt-1">
+        <Label htmlFor="service">Service Required</Label>
+        <Select
+          onValueChange={handleServiceChange}
+          value={formData.service}
+          required
+        >
+          <SelectTrigger className="mt-1">
             <SelectValue placeholder="Select a service" />
           </SelectTrigger>
           <SelectContent>
@@ -127,27 +143,26 @@ const ContactForm = () => {
           </SelectContent>
         </Select>
       </div>
-      
+
       <div>
-        <Label htmlFor="message">Your Message</Label>
+        <Label htmlFor="message">Message</Label>
         <Textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Please provide details about your service requirements"
-          rows={5}
-          className="mt-1"
+          placeholder="Tell us more about what you need..."
           required
+          className="mt-1 min-h-[120px]"
         />
       </div>
-      
+
       <Button 
         type="submit" 
-        className="w-full bg-khum-primary hover:bg-khum-secondary"
+        className="w-full bg-khum-primary hover:bg-khum-primary/90"
         disabled={isSubmitting}
       >
-        {isSubmitting ? "Sending..." : "Submit Request"}
+        {isSubmitting ? "Sending..." : "Send Message via WhatsApp"}
       </Button>
     </form>
   );
