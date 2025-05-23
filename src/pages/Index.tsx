@@ -26,8 +26,8 @@ const Index = () => {
   // Sample service data
   const featuredServices = [
     {
-      title: "Air-Conditioning & Ventilation",
-      description: "Professional installation, maintenance, and repair of AC systems and ventilation equipment for optimal indoor air quality.",
+      title: "Air-Conditioning, Ventilations & Air Filtration Systems",
+      description: "Professional installation, repair, and maintenance of air conditioning units, ventilation systems, and air filtration systems for optimal indoor air quality and comfort. Our certified technicians handle all types of AC systems for residential and commercial properties.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -47,11 +47,40 @@ const Index = () => {
           <path d="M6.6 15.6A2 2 0 1 0 10 17v-5" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1605374005175-fa0a768522a3?q=80&w=600&auto=format&fit=crop"
+      image: "/images/serviceimages/acrepair.jpg"
     },
     {
-      title: "Electrical Installation",
-      description: "Expert installation and maintenance of electrical systems, ensuring safety and efficiency in residential and commercial buildings.",
+      title: "Lifts & Escalators Contracting",
+      description: "Expert installation, maintenance, and repair services for elevators, lifts, and escalators. We ensure safe and efficient vertical transportation systems in commercial and residential buildings, complying with all safety regulations and standards.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-lift"
+        >
+          <path d="M22 12h-5" />
+          <path d="M2 12h5" />
+          <path d="M12 2v5" />
+          <path d="M12 17v5" />
+          <path d="m4.93 19.07 2.83-2.83" />
+          <path d="m16.24 7.76 2.83-2.83" />
+          <path d="m19.07 19.07-2.83-2.83" />
+          <path d="m7.76 7.76-2.83-2.83" />
+          <circle cx="12" cy="12" r="5" />
+        </svg>
+      ),
+      image: "/images/serviceimages/lift.jpg"
+    },
+    {
+      title: "Electricity Transmission & Control Equipment Installation",
+      description: "Comprehensive electrical services including installation, repair, and maintenance of electrical systems, wiring, circuit breakers, panels, and control equipment. Our licensed electricians ensure safe and efficient electrical systems for your property.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -76,11 +105,11 @@ const Index = () => {
           <circle cx="12" cy="12" r="5" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1584964139384-7f7d0b7c1eb9?q=80&w=600&auto=format&fit=crop"
+      image: "/images/serviceimages/electricity.jpg"
     },
     {
-      title: "Plumbing & Sanitary",
-      description: "Comprehensive plumbing services including installation, repair, and maintenance of pipes, fixtures, and sanitary systems.",
+      title: "Plumbing & Sanitary Installation",
+      description: "Professional installation and repair of plumbing systems, fixtures, and sanitary equipment. Our skilled plumbers handle everything from faucet repairs to complete bathroom renovations, ensuring proper water flow and drainage.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -110,11 +139,36 @@ const Index = () => {
           <path d="M19 19v3" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=600&auto=format&fit=crop"
+      image: "/images/serviceimages/plumbing.jpg"
     },
     {
-      title: "Painting & Finishing",
-      description: "Professional painting services for interior and exterior surfaces, providing aesthetically pleasing and long-lasting results.",
+      title: "Floor & Wall Tiling Works",
+      description: "Expert installation of ceramic, porcelain, marble, granite, and mosaic tiles for floors and walls. We provide precision cutting, proper adhesive application, and perfect alignment to create beautiful and durable tiled surfaces.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-tiling"
+        >
+          <path d="M18 4v16" />
+          <path d="M18 12h-7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7" />
+          <path d="M2 12h6" />
+          <path d="M2 16h6" />
+          <path d="M18 16h4" />
+        </svg>
+      ),
+      image: "/images/serviceimages/tiling.jpg"
+    },
+    {
+      title: "Painting Contracting",
+      description: "Professional painting services for interior and exterior surfaces. We use high-quality paints and techniques to provide smooth, even coverage and long-lasting results that enhance the appearance and value of your property.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +189,112 @@ const Index = () => {
           <path d="M18 16h4" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?q=80&w=600&auto=format&fit=crop"
+      image: "/images/serviceimages/painting.jpg"
+    },
+    {
+      title: "Carpentry & Wood Flooring Works",
+      description: "Skilled carpentry services including custom woodwork, cabinetry, furniture assembly, and wood flooring installation. Our experienced carpenters create and install beautiful, functional wooden elements for your home or business.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-carpentry"
+        >
+          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      image: "/images/serviceimages/carpentry.jpg"
+    },
+    {
+      title: "False Ceiling & Light Partitions Installation",
+      description: "Professional installation of false ceilings, drywall partitions, and light partition systems. We create functional and aesthetically pleasing spaces with precise installation of suspended ceilings and partitions for residential and commercial properties.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-false-ceiling"
+        >
+          <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      image: "/images/serviceimages/false.jpg"
+    },
+    {
+      title: "Sanitary Installation & Pipes Repairing",
+      description: "Comprehensive sanitary and pipe repair services including fixing leaks, replacing damaged pipes, unclogging drains, and installing new sanitary fixtures. We ensure proper water flow and prevent damage from leaks and blockages.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-sanitary"
+        >
+          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      image: "/images/serviceimages/sanitary.jpg"
+    },
+    {
+      title: "Plaster Works",
+      description: "Expert plastering services for walls and ceilings, including new installations, repairs, and decorative plasterwork. Our skilled plasterers provide smooth, even finishes that create the perfect base for painting or other wall finishes.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-plaster"
+        >
+          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      image: "/images/serviceimages/plaster.jpg"
+    },
+    {
+      title: "Building Cleaning Services",
+      description: "Comprehensive cleaning services for residential and commercial buildings, including deep cleaning, regular maintenance cleaning, post-construction cleaning, and specialized cleaning services. We use professional equipment and eco-friendly products to ensure hygiene and cleanliness.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-building-cleaning"
+        >
+          <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+      image: "/images/serviceimages/buildingcleaning.jpg"
     }
   ];
 
@@ -161,24 +320,12 @@ const Index = () => {
     }
   ];
 
-  // Sample project images
+  // Sample project images (show 4 real portfolio images)
   const projectImages = [
-    { 
-      src: "https://images.unsplash.com/photo-1595844730298-b960ff98fee0?q=80&w=800&auto=format&fit=crop", 
-      alt: "AC Installation Project" 
-    },
-    { 
-      src: "https://images.unsplash.com/photo-1565183997392-2f6f122e5912?q=80&w=800&auto=format&fit=crop", 
-      alt: "Electrical Installation" 
-    },
-    { 
-      src: "https://images.unsplash.com/photo-1517581177682-a085bb7ffb38?q=80&w=800&auto=format&fit=crop", 
-      alt: "Plumbing Work" 
-    },
-    { 
-      src: "https://images.unsplash.com/photo-1521783593447-5702b9bfd267?q=80&w=800&auto=format&fit=crop", 
-      alt: "Building Cleaning" 
-    },
+    { src: '/images/portfolio-images/acrep1.jpg', alt: 'AC Installation Project' },
+    { src: '/images/portfolio-images/elecpanel1.jpg', alt: 'Electrical Installation' },
+    { src: '/images/portfolio-images/bathplumb1.jpg', alt: 'Plumbing Work' },
+    { src: '/images/portfolio-images/builclean1.jpg', alt: 'Building Cleaning' },
   ];
 
   // Company features
@@ -254,7 +401,7 @@ const Index = () => {
       <Hero />
 
       {/* About Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-[rgba(173,204,214,1)]">
         <div className="container mx-auto px-4">
           <MotionWrapper>
             <div className="text-center mb-12">
@@ -314,7 +461,7 @@ const Index = () => {
           </MotionWrapper>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {featuredServices.map((service, index) => (
+            {featuredServices.slice(0, 4).map((service, index) => (
               <ServiceCard 
                 key={index} 
                 title={service.title} 

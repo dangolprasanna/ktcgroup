@@ -84,7 +84,11 @@ const About = () => {
               <div className="aspect-w-16 aspect-h-9 bg-gray-200">
                 {/* Placeholder for company image */}
                 <div className="w-full h-full bg-gradient-to-br from-khum-primary to-khum-secondary flex items-center justify-center">
-                  <span className="text-white text-lg font-medium">Company Image</span>
+                  <img
+                    src="/images/aboutus-images/aboutus1.jpg"
+                    alt="Company Team"
+                    className="object-cover w-full h-full rounded-xl shadow-lg"
+                  />
                 </div>
               </div>
             </div>

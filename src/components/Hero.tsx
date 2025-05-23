@@ -117,7 +117,7 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tl from-khum-primary/50 to-transparent rounded-lg z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1530260968894-b9b6fc8f4ccf?q=80&w=1482&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                src="/images/Home-images/homeimg1.jpg" 
                 alt="KHUM Technical and Cleaning Services" 
                 className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
               />

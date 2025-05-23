@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import { motion } from 'framer-motion';
 import MotionWrapper from '@/components/MotionWrapper';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
 
 const Services = () => {
   const services = [
@@ -29,7 +29,7 @@ const Services = () => {
           <path d="M6.6 15.6A2 2 0 1 0 10 17v-5" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1606225457115-9b0de873c5db?q=80&w=800&auto=format&fit=crop"
+      image:  " /images/serviceimages/acrepair.jpg"
     },
     {
       title: "Lifts & Escalators Contracting",
@@ -60,7 +60,7 @@ const Services = () => {
           <path d="M8 14h.01" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1554413650-308061a4c247?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/lift.jpg"
     },
     {
       title: "Electricity Transmission & Control Equipment Installation",
@@ -89,7 +89,7 @@ const Services = () => {
           <circle cx="12" cy="12" r="5" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1584964139384-7f7d0b7c1eb9?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/electricity.jpg"
     },
     {
       title: "Plumbing & Sanitary Installation",
@@ -123,7 +123,7 @@ const Services = () => {
           <path d="M19 19v3" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/plumbing.jpg"
     },
     {
       title: "Floor & Wall Tiling Works",
@@ -151,7 +151,7 @@ const Services = () => {
           <path d="m8 6 8 8" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/tiling.jpg"
     },
     {
       title: "Painting Contracting",
@@ -176,7 +176,7 @@ const Services = () => {
           <path d="M18 16h4" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/painting.jpg"
     },
     {
       title: "Carpentry & Wood Flooring Works",
@@ -200,7 +200,7 @@ const Services = () => {
           <path d="M5 10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1559553156-2e97137af16f?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/carpentry.jpg"
     },
     {
       title: "False Ceiling & Light Partitions Installation",
@@ -223,7 +223,7 @@ const Services = () => {
           <path d="M8 22v-2c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2H8Z" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1594125674956-61a9b49c8eeb?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/false.jpg"
     },
     {
       title: "Sanitary Installation & Pipes Repairing",
@@ -244,7 +244,7 @@ const Services = () => {
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1576427099042-7c7c9c9c1d4f?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/sanitary.jpg"
     },
     {
       title: "Plaster Works",
@@ -272,7 +272,7 @@ const Services = () => {
           <path d="m8 6 8 8" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1571989545580-1f8c83a07428?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/plaster.jpg"
     },
     {
       title: "Building Cleaning Services",
@@ -303,7 +303,7 @@ const Services = () => {
           <path d="M8 14h.01" />
         </svg>
       ),
-      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop"
+      image: "/images/serviceimages/buildingcleaning.jpg"
     },
   ];
 

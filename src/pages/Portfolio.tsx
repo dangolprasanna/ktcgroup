@@ -14,55 +14,55 @@ const Portfolio = () => {
     {
       id: 1,
       title: "Air Conditioning Installation",
-      image: "https://images.unsplash.com/photo-1519378045141-f05b322bec6e?q=80&w=800",
+      image: "/images/portfolio-images/acrep1.jpg", 
       category: "air-conditioning"
     },
     {
       id: 2,
       title: "Commercial Building Cleaning",
-      image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800",
+      image: " /images/portfolio-images/builclean1.jpg",
       category: "cleaning"
     },
     {
       id: 3,
       title: "Bathroom Plumbing Renovation",
-      image: "https://images.unsplash.com/photo-1552143233-1e1bf2a48e29?q=80&w=800",
+      image: "/images/portfolio-images/bathplumb1.jpg",
       category: "plumbing"
     },
     {
       id: 4,
       title: "Interior Painting Project",
-      image: "https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?q=80&w=800",
+      image: "/images/portfolio-images/intpain1.jpg",
       category: "painting"
     },
     {
       id: 5,
       title: "Electrical Panel Installation",
-      image: "https://images.unsplash.com/photo-1589939705884-5e4a5844d35f?q=80&w=800",
+      image: "/images/portfolio-images/elecpanel1.jpg",
       category: "electrical"
     },
     {
       id: 6,
       title: "Kitchen Tiling Work",
-      image: "https://images.unsplash.com/photo-1584622781564-1d987f7333c1?q=80&w=800",
+      image: "/images/portfolio-images/kitctiling1.jpg",
       category: "tiling"
     },
     {
       id: 7,
       title: "Office Cleaning Service",
-      image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?q=80&w=800",
+      image: "/images/portfolio-images/officclean1.jpg",
       category: "cleaning"
     },
     {
       id: 8,
       title: "Wooden Flooring Installation",
-      image: "https://images.unsplash.com/photo-1577637858564-afba235fe220?q=80&w=800",
+      image: "/images/portfolio-images/woodfloor1.jpg",
       category: "carpentry"
     },
     {
       id: 9,
       title: "False Ceiling Installation",
-      image: "https://images.unsplash.com/photo-1574883052806-413e0a1ef62b?q=80&w=800",
+      image: "/images/portfolio-images/falseceil1.jpg",
       category: "ceiling"
     }
   ];

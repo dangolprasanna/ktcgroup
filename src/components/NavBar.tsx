@@ -10,13 +10,13 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-[rgb(9,52,59)] shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <span className="text-khum-primary font-bold text-xl md:text-2xl">KHUM</span>
-            <span className="hidden md:inline text-khum-secondary text-sm">
+            <span className=" bg-[rgb(208, 211, 212)] hidden md:inline text-khum-secondary text-sm">
               TECHNICAL & CLEANING SERVICES
             </span>
           </Link>
@@ -102,12 +102,12 @@ const NavBar = () => {
       <style>{`
         .nav-link {
           position: relative;
-          color: #374151;
+          color: #47cea7;
           font-weight: 500;
           transition: color 0.2s;
         }
         .nav-link:hover {
-          color: #0B3C5D;
+          color:rgb(0, 167, 204);
         }
         .nav-link::after {
           content: '';
