@@ -11,6 +11,7 @@ interface ServiceData {
   serviceName: string;
   briefExplanation: string;
   detailedDescription: string;
+  image?: string;
 }
 
 const ServiceDetail = () => {
@@ -133,7 +134,7 @@ const ServiceDetail = () => {
                   <motion.div 
                     className="w-full h-[400px] md:h-[500px] bg-cover bg-center"
                     style={{ 
-                      backgroundImage: `url(https://source.unsplash.com/1200x800/?${encodeURIComponent(service.serviceName.split(' ')[0])})` 
+                      backgroundImage: service.image ? `url(${service.image})` : `url(https://source.unsplash.com/1200x800/?${encodeURIComponent(service.serviceName.split(' ')[0])})` 
                     }}
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.5 }}
@@ -219,30 +220,48 @@ const ServiceDetail = () => {
             {servicesData
               .filter((_, index) => index !== parseInt(id || '0') && index < parseInt(id || '0') + 3 && index > parseInt(id || '0') - 3)
               .slice(0, 3)
-              .map((relatedService, index) => (
-                <MotionWrapper key={index} delay={index * 0.1}>
-                  <Link to={`/services/${servicesData.findIndex(s => s.serviceName === relatedService.serviceName)}`} className="block h-full">
-                    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 h-full transform hover:-translate-y-1">
-                      <div className="w-full h-48 overflow-hidden">
-                        <div 
-                          className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
-                          style={{ backgroundImage: `url(https://source.unsplash.com/800x600/?${encodeURIComponent(relatedService.serviceName.split(' ')[0])})` }}
-                        ></div>
-                      </div>
-                      <div className="p-6">
-                        <h3 className="text-xl font-semibold text-khum-primary mb-3">{relatedService.serviceName}</h3>
-                        <p className="text-gray-600 line-clamp-3 mb-4">{relatedService.briefExplanation}</p>
-                        <div className="flex items-center text-khum-accent font-medium">
-                          <span>Learn more</span>
-                          <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                          </svg>
+              .map((relatedService, index) => {
+                // Map index to serviceimages
+                const relatedIndex = servicesData.findIndex(s => s.serviceName === relatedService.serviceName);
+                const serviceImages = [
+                  '/images/serviceimages/acrepair.jpg',
+                  '/images/serviceimages/lift.jpg',
+                  '/images/serviceimages/electricity.jpg',
+                  '/images/serviceimages/plumbing.jpg',
+                  '/images/serviceimages/tiling.jpg',
+                  '/images/serviceimages/painting.jpg',
+                  '/images/serviceimages/carpentry.jpg',
+                  '/images/serviceimages/false.jpg',
+                  '/images/serviceimages/sanitary.jpg',
+                  '/images/serviceimages/plaster.jpg',
+                  '/images/serviceimages/buildingcleaning.jpg',
+                ];
+                const relatedImage = serviceImages[relatedIndex] || '';
+                return (
+                  <MotionWrapper key={index} delay={index * 0.1}>
+                    <Link to={`/services/${relatedIndex}`} className="block h-full">
+                      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 h-full transform hover:-translate-y-1">
+                        <div className="w-full h-48 overflow-hidden">
+                          <div 
+                            className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
+                            style={{ backgroundImage: `url(${relatedImage})` }}
+                          ></div>
+                        </div>
+                        <div className="p-6">
+                          <h3 className="text-xl font-semibold text-khum-primary mb-3">{relatedService.serviceName}</h3>
+                          <p className="text-gray-600 line-clamp-3 mb-4">{relatedService.briefExplanation}</p>
+                          <div className="flex items-center text-khum-accent font-medium">
+                            <span>Learn more</span>
+                            <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                </MotionWrapper>
-              ))}
+                    </Link>
+                  </MotionWrapper>
+                );
+              })}
           </div>
 
           <div className="text-center mt-12">
@@ -271,4 +290,4 @@ const ServiceDetail = () => {
   );
 };
 
-export default ServiceDetail; 
+export default ServiceDetail;

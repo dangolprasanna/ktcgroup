@@ -16,7 +16,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="bg-[rgb(9,52,59)] shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
@@ -164,12 +164,12 @@ const NavBar = () => {
       <style>{`
         .nav-link {
           position: relative;
-          color: #374151;
+          color: #47cea7;
           font-weight: 500;
           transition: color 0.2s;
         }
         .nav-link:hover {
-          color: #0B3C5D;
+          color:rgb(0, 167, 204);
         }
         .nav-link::after {
           content: '';
