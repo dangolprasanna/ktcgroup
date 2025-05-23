@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useScrollDirection } from "@/hooks/use-scroll-direction";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isVisible = useScrollDirection();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -16,17 +18,21 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="bg-[rgb(255,255,255)] shadow-md sticky top-0 z-50">
+    <nav
+      className={cn(
+        "bg-[rgb(255,255,255)] shadow-md sticky top-0 z-50 transition-transform duration-300",
+        !isVisible && "-translate-y-full"
+      )}
+    >
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-khum-primary font-bold text-xl md:text-2xl">
-              KHUM
-            </span>
-            <span className="hidden md:inline text-khum-secondary text-sm">
-              TECHNICAL & CLEANING SERVICES
-            </span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/images/Home-images/KHUM.png" 
+              alt="KHUM Technical and Cleaning Services" 
+              className="h-16 md:h-20 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
