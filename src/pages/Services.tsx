@@ -355,7 +355,7 @@ const Services = () => {
             </div>
           </MotionWrapper>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {services.map((service, index) => (
               <MotionWrapper key={index} delay={index * 0.1}>
                 <Link to={`/services/${index}`} className="block">
