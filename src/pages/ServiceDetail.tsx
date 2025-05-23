@@ -225,15 +225,12 @@ const ServiceDetail = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {servicesData
-              .filter((_, index) => index !== parseInt(id || '0'))
-              .sort((a, b) => {
-                const currentIndex = parseInt(id || '0');
-                const distanceA = Math.abs(servicesData.indexOf(a) - currentIndex);
-                const distanceB = Math.abs(servicesData.indexOf(b) - currentIndex);
-                return distanceA - distanceB;
-              })
+              .filter((_, index) => index !== parseInt(id || '0') && index < parseInt(id || '0') + 3 && index > parseInt(id || '0') - 3)
               .slice(0, 3)
               .map((relatedService, index) => {
+                // Map index to serviceimages
+                const relatedIndex = servicesData.findIndex(s => s.serviceName === relatedService.serviceName);
+                // Log the image path for debugging
                 const serviceImages = [
                   '/images/serviceimages/acrepair.jpg',
                   '/images/serviceimages/lift.jpg',
@@ -247,25 +244,27 @@ const ServiceDetail = () => {
                   '/images/serviceimages/plaster.jpg',
                   '/images/serviceimages/buildingcleaning.jpg',
                 ];
-                
-                const serviceIndex = servicesData.findIndex(s => s === relatedService);
-                const relatedImage = serviceImages[serviceIndex] || '';
-                
+                console.log('Service index:', relatedIndex, 'Image path:', serviceImages[relatedIndex]);
+                const relatedImage = serviceImages[relatedIndex] || '';
                 return (
-                  <MotionWrapper key={serviceIndex} delay={index * 0.1}>
-                    <Link to={`/services/${serviceIndex}`} className="block h-full">
+                  <MotionWrapper key={index} delay={index * 0.1}>
+                    <Link to={`/services/${relatedIndex}`} className="block h-full">
                       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 h-full transform hover:-translate-y-1">
                         <div className="w-full h-48 overflow-hidden">
                           <div 
                             className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
                             style={{ backgroundImage: `url(${relatedImage})` }}
+                            onError={(e) => {
+                              // If image fails to load, use a fallback
+                              const target = e.target as HTMLElement;
+                              target.style.backgroundColor = '#f3f4f6';
+                            }}
                           >
                             <img 
                               src={relatedImage} 
                               alt={relatedService.serviceName}
                               className="w-full h-full object-cover opacity-0"
                               onError={(e) => {
-                                console.log('Image load error:', relatedImage);
                                 const target = e.target as HTMLImageElement;
                                 target.style.display = 'none';
                               }}
