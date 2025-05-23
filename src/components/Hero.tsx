@@ -65,12 +65,16 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <Button size="lg" className="bg-khum-accent hover:bg-khum-accent/90 text-white rounded-full px-8">
-                <Link to="/contact">Request a Quote</Link>
-              </Button>
-              <Button size="lg" variant="outline" className="text-khum-primary border-white hover:bg-white hover:text-khum-primary rounded-full px-8">
-                <Link to="/services">Our Services</Link>
-              </Button>
+              <Link to="/contact">
+                <Button size="lg" className="bg-khum-accent hover:bg-khum-accent/90 text-white rounded-full px-8">
+                  Request a Quote
+                </Button>
+              </Link>
+              <Link to="/services">
+                <Button size="lg" variant="outline" className="text-khum-primary border-white hover:bg-white hover:text-khum-primary rounded-full px-8">
+                  Our Services
+                </Button>
+              </Link>
             </motion.div>
             
             {/* Trust Badges */}

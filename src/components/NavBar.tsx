@@ -1,12 +1,18 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const isActivePage = (path: string) => {
+    return location.pathname === path;
   };
 
   return (
@@ -23,11 +29,11 @@ const NavBar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="nav-link">Home</Link>
-            <Link to="/about" className="nav-link">About Us</Link>
-            <Link to="/services" className="nav-link">Services</Link>
-            <Link to="/portfolio" className="nav-link">Portfolio</Link>
-            <Link to="/contact" className="nav-link">Contact</Link>
+            <Link to="/" className={cn("nav-link", isActivePage("/") && "active")}>Home</Link>
+            <Link to="/about" className={cn("nav-link", isActivePage("/about") && "active")}>About Us</Link>
+            <Link to="/services" className={cn("nav-link", isActivePage("/services") && "active")}>Services</Link>
+            <Link to="/portfolio" className={cn("nav-link", isActivePage("/portfolio") && "active")}>Portfolio</Link>
+            <Link to="/contact" className={cn("nav-link", isActivePage("/contact") && "active")}>Contact</Link>
             <Button className="bg-khum-primary hover:bg-khum-secondary text-white ml-2">
               <Link to="/contact">Request Quote</Link>
             </Button>
@@ -60,35 +66,35 @@ const NavBar = () => {
           <div className="flex flex-col space-y-4">
             <Link 
               to="/" 
-              className="text-gray-700 hover:text-khum-primary font-medium py-2"
+              className={cn("text-gray-700 hover:text-khum-primary font-medium py-2", isActivePage("/") && "text-khum-primary")}
               onClick={toggleMobileMenu}
             >
               Home
             </Link>
             <Link 
               to="/about" 
-              className="text-gray-700 hover:text-khum-primary font-medium py-2"
+              className={cn("text-gray-700 hover:text-khum-primary font-medium py-2", isActivePage("/about") && "text-khum-primary")}
               onClick={toggleMobileMenu}
             >
               About Us
             </Link>
             <Link 
               to="/services" 
-              className="text-gray-700 hover:text-khum-primary font-medium py-2"
+              className={cn("text-gray-700 hover:text-khum-primary font-medium py-2", isActivePage("/services") && "text-khum-primary")}
               onClick={toggleMobileMenu}
             >
               Services
             </Link>
             <Link 
               to="/portfolio" 
-              className="text-gray-700 hover:text-khum-primary font-medium py-2"
+              className={cn("text-gray-700 hover:text-khum-primary font-medium py-2", isActivePage("/portfolio") && "text-khum-primary")}
               onClick={toggleMobileMenu}
             >
               Portfolio
             </Link>
             <Link 
               to="/contact" 
-              className="text-gray-700 hover:text-khum-primary font-medium py-2"
+              className={cn("text-gray-700 hover:text-khum-primary font-medium py-2", isActivePage("/contact") && "text-khum-primary")}
               onClick={toggleMobileMenu}
             >
               Contact
@@ -121,8 +127,12 @@ const NavBar = () => {
           transform: scaleX(0);
           transition: transform 0.3s cubic-bezier(.4,0,.2,1);
         }
-        .nav-link:hover::after {
+        .nav-link:hover::after,
+        .nav-link.active::after {
           transform: scaleX(1);
+        }
+        .nav-link.active {
+          color: #0B3C5D;
         }
       `}</style>
     </nav>
