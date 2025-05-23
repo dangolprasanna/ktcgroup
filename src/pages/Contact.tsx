@@ -72,7 +72,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-1 text-khum-primary">Email</h3>
-                    <p className="text-gray-600">info@khumtechnical.com</p>
+                    <p className="text-gray-600">ktcgroup.uae@gmail.com</p>
                     <p className="text-gray-500 text-sm">We respond to emails within 24 hours</p>
                   </div>
                 </div>

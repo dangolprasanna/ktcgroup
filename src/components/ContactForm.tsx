@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,6 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -23,6 +24,12 @@ const ContactForm = () => {
     service: "",
     message: "",
   });
+
+  // Validate form whenever formData changes
+  useEffect(() => {
+    const isValid = Object.values(formData).every(value => value.trim() !== "");
+    setIsFormValid(isValid);
+  }, [formData]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -43,12 +50,14 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Format the message for WhatsApp
-    const whatsappMessage = `Name: ${formData.name}%0A` + 
-      `Email: ${formData.email}%0A` +
-      `Phone: ${formData.phone}%0A` +
-      `Service Required: ${formData.service}%0A` +
-      `Message: ${formData.message}`;
+    // Format the message for WhatsApp with proper URL encoding
+    const whatsappMessage = encodeURIComponent(
+      `Name: ${formData.name}\n` + 
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Service Required: ${formData.service}\n` +
+      `Message: ${formData.message}`
+    );
 
     // WhatsApp API URL
     const whatsappUrl = `https://api.whatsapp.com/send?phone=9779840807275&text=${whatsappMessage}`;
@@ -128,18 +137,18 @@ const ContactForm = () => {
             <SelectValue placeholder="Select a service" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="air-conditioning">Air-Conditioning & Ventilation</SelectItem>
-            <SelectItem value="lifts">Lifts & Escalators</SelectItem>
-            <SelectItem value="electrical">Electrical Installation</SelectItem>
-            <SelectItem value="plumbing">Plumbing & Sanitary</SelectItem>
-            <SelectItem value="tiling">Floor & Wall Tiling</SelectItem>
-            <SelectItem value="painting">Painting</SelectItem>
-            <SelectItem value="carpentry">Carpentry & Wood Flooring</SelectItem>
-            <SelectItem value="ceiling">False Ceiling & Light Partitions</SelectItem>
-            <SelectItem value="sanitary-repair">Sanitary & Pipes Repairing</SelectItem>
-            <SelectItem value="plaster">Plaster Works</SelectItem>
-            <SelectItem value="cleaning">Building Cleaning Services</SelectItem>
-            <SelectItem value="other">Other Services</SelectItem>
+            <SelectItem value="Air-Conditioning & Ventilation">Air-Conditioning & Ventilation</SelectItem>
+            <SelectItem value="Lifts & Escalators">Lifts & Escalators</SelectItem>
+            <SelectItem value="Electrical Installation">Electrical Installation</SelectItem>
+            <SelectItem value="Plumbing & Sanitary">Plumbing & Sanitary</SelectItem>
+            <SelectItem value="Floor & Wall Tiling">Floor & Wall Tiling</SelectItem>
+            <SelectItem value="Painting">Painting</SelectItem>
+            <SelectItem value="Carpentry & Wood Flooring">Carpentry & Wood Flooring</SelectItem>
+            <SelectItem value="False Ceiling & Light Partitions">False Ceiling & Light Partitions</SelectItem>
+            <SelectItem value="Sanitary & Pipes Repairing">Sanitary & Pipes Repairing</SelectItem>
+            <SelectItem value="Plaster Works">Plaster Works</SelectItem>
+            <SelectItem value="Building Cleaning Services">Building Cleaning Services</SelectItem>
+            <SelectItem value="Other Services">Other Services</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -160,7 +169,7 @@ const ContactForm = () => {
       <Button 
         type="submit" 
         className="w-full bg-khum-primary hover:bg-khum-primary/90"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !isFormValid}
       >
         {isSubmitting ? "Sending..." : "Send Message via WhatsApp"}
       </Button>
