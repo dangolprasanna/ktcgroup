@@ -120,7 +120,7 @@ const Hero = () => {
                 src="/images/Home-images/homeimg1.jpg" 
                 alt="KHUM Technical and Cleaning Services" 
                 className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
-              />
+              /> 
               
               {/* Floating Service Icons */}
               <motion.div 
