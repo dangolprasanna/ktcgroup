@@ -132,13 +132,20 @@ const ServiceDetail = () => {
               <MotionWrapper>
                 <div className="rounded-xl overflow-hidden shadow-lg">
                   <motion.div 
-                    className="w-full h-[400px] md:h-[500px] bg-cover bg-center"
-                    style={{ 
-                      backgroundImage: service.image ? `url(${service.image})` : `url(https://source.unsplash.com/1200x800/?${encodeURIComponent(service.serviceName.split(' ')[0])})` 
-                    }}
+                    className="w-full h-[400px] md:h-[500px] bg-cover bg-center relative"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.5 }}
-                  />
+                  >
+                    <img 
+                      src={service.image || `https://source.unsplash.com/1200x800/?${encodeURIComponent(service.serviceName.split(' ')[0])}`}
+                      alt={service.serviceName}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = `https://source.unsplash.com/1200x800/?${encodeURIComponent(service.serviceName.split(' ')[0])}`;
+                      }}
+                    />
+                  </motion.div>
                 </div>
                 
                 {/* Service Quick Info */}
@@ -218,11 +225,15 @@ const ServiceDetail = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {servicesData
-              .filter((_, index) => index !== parseInt(id || '0') && index < parseInt(id || '0') + 3 && index > parseInt(id || '0') - 3)
+              .filter((_, index) => index !== parseInt(id || '0'))
+              .sort((a, b) => {
+                const currentIndex = parseInt(id || '0');
+                const distanceA = Math.abs(servicesData.indexOf(a) - currentIndex);
+                const distanceB = Math.abs(servicesData.indexOf(b) - currentIndex);
+                return distanceA - distanceB;
+              })
               .slice(0, 3)
               .map((relatedService, index) => {
-                // Map index to serviceimages
-                const relatedIndex = servicesData.findIndex(s => s.serviceName === relatedService.serviceName);
                 const serviceImages = [
                   '/images/serviceimages/acrepair.jpg',
                   '/images/serviceimages/lift.jpg',
@@ -236,16 +247,30 @@ const ServiceDetail = () => {
                   '/images/serviceimages/plaster.jpg',
                   '/images/serviceimages/buildingcleaning.jpg',
                 ];
-                const relatedImage = serviceImages[relatedIndex] || '';
+                
+                const serviceIndex = servicesData.findIndex(s => s === relatedService);
+                const relatedImage = serviceImages[serviceIndex] || '';
+                
                 return (
-                  <MotionWrapper key={index} delay={index * 0.1}>
-                    <Link to={`/services/${relatedIndex}`} className="block h-full">
+                  <MotionWrapper key={serviceIndex} delay={index * 0.1}>
+                    <Link to={`/services/${serviceIndex}`} className="block h-full">
                       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 h-full transform hover:-translate-y-1">
                         <div className="w-full h-48 overflow-hidden">
                           <div 
                             className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
                             style={{ backgroundImage: `url(${relatedImage})` }}
-                          ></div>
+                          >
+                            <img 
+                              src={relatedImage} 
+                              alt={relatedService.serviceName}
+                              className="w-full h-full object-cover opacity-0"
+                              onError={(e) => {
+                                console.log('Image load error:', relatedImage);
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                              }}
+                            />
+                          </div>
                         </div>
                         <div className="p-6">
                           <h3 className="text-xl font-semibold text-khum-primary mb-3">{relatedService.serviceName}</h3>
