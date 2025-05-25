@@ -232,17 +232,17 @@ const ServiceDetail = () => {
                 const relatedIndex = servicesData.findIndex(s => s.serviceName === relatedService.serviceName);
                 // Log the image path for debugging
                 const serviceImages = [
-                  '/images/serviceimages/acrepair.jpg',
-                  '/images/serviceimages/lift.jpg',
-                  '/images/serviceimages/electricity.jpg',
-                  '/images/serviceimages/plumbing.jpg',
-                  '/images/serviceimages/tiling.jpg',
-                  '/images/serviceimages/painting.jpg',
-                  '/images/serviceimages/carpentry.jpg',
-                  '/images/serviceimages/false.jpg',
-                  '/images/serviceimages/sanitary.jpg',
-                  '/images/serviceimages/plaster.jpg',
-                  '/images/serviceimages/buildingcleaning.jpg',
+                  `${import.meta.env.BASE_URL}images/serviceimages/acrepair.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/lift.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/electricity.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/plumbing.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/tiling.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/painting.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/carpentry.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/false.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/sanitary.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/plaster.jpg`,
+                  `${import.meta.env.BASE_URL}images/serviceimages/buildingcleaning.jpg`,
                 ];
                 console.log('Service index:', relatedIndex, 'Image path:', serviceImages[relatedIndex]);
                 const relatedImage = serviceImages[relatedIndex] || '';
