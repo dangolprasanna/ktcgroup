@@ -32,17 +32,17 @@ const ServiceDetail = () => {
 
   // Determine the main image for the service detail
   const portfolioImages = [
-    `${import.meta.env.BASE_URL}images/portfolio-images/acrep1.jpg`,
-    `${import.meta.env.BASE_URL}images/portfolio-images/lift1.jpg`,
-    `${import.meta.env.BASE_URL}images/portfolio-images/elecpanel1.jpg`,
-    `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`,
-    `${import.meta.env.BASE_URL}images/portfolio-images/kitctiling1.jpg`,
-    `${import.meta.env.BASE_URL}images/portfolio-images/intpain1.jpg`,
-    `${import.meta.env.BASE_URL}images/portfolio-images/woodfloor1.jpg`,
-    `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
-    `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`, // fallback for sanitary
-    `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`, // fallback for plaster
-    `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/acrepair.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/lift.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/electricity.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/plumbing.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/tiling.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/painting.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/carpentry.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/false.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/sanitary.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/plaster.jpg`,
+    `${import.meta.env.BASE_URL}images/serviceimages/buildingcleaning.jpg`,
   ];
   const serviceIndex = id && !isNaN(parseInt(id)) ? parseInt(id) : -1;
   let mainImage =
