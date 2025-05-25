@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom"
 
 // 👇 Add basename here
 createRoot(document.getElementById("root")!).render(
-  <BrowserRouter basename="/khum-clean-tech-dubai/">
+  <BrowserRouter basename="/ktcgroup/">
     <App />
   </BrowserRouter>
 );
