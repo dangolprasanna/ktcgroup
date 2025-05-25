@@ -32,23 +32,23 @@ const ServiceDetail = () => {
 
   // Determine the main image for the service detail
   const portfolioImages = [
-    "/images/portfolio-images/acrep1.jpg",
-    "/images/portfolio-images/lift1.jpg",
-    "/images/portfolio-images/elecpanel1.jpg",
-    "/images/portfolio-images/bathplumb1.jpg",
-    "/images/portfolio-images/kitctiling1.jpg",
-    "/images/portfolio-images/intpain1.jpg",
-    "/images/portfolio-images/woodfloor1.jpg",
-    "/images/portfolio-images/falseceil1.jpg",
-    "/images/portfolio-images/bathplumb1.jpg", // fallback for sanitary
-    "/images/portfolio-images/builclean1.jpg", // fallback for plaster
-    "/images/portfolio-images/builclean1.jpg",
+    `${import.meta.env.BASE_URL}images/portfolio-images/acrep1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/lift1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/elecpanel1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/kitctiling1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/intpain1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/woodfloor1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`, // fallback for sanitary
+    `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`, // fallback for plaster
+    `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`,
   ];
   const serviceIndex = id && !isNaN(parseInt(id)) ? parseInt(id) : -1;
-  const mainImage =
+  let mainImage =
     serviceIndex >= 0 && serviceIndex < portfolioImages.length
       ? portfolioImages[serviceIndex]
-      : `https://source.unsplash.com/1200x800/?${encodeURIComponent(service.serviceName.split(' ')[0])}`;
+      : "/images/portfolio-images/acrep1.jpg";
 
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
@@ -160,10 +160,6 @@ const ServiceDetail = () => {
                       src={mainImage}
                       alt={service.serviceName}
                       className="w-full h-full object-cover"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = `https://source.unsplash.com/1200x800/?${encodeURIComponent(service.serviceName.split(' ')[0])}`;
-                      }}
                     />
                   </motion.div>
                 </div>
@@ -248,48 +244,31 @@ const ServiceDetail = () => {
               .filter((_, index) => index !== parseInt(id || '0') && index < parseInt(id || '0') + 3 && index > parseInt(id || '0') - 3)
               .slice(0, 3)
               .map((relatedService, index) => {
-                // Map index to serviceimages
                 const relatedIndex = servicesData.findIndex(s => s.serviceName === relatedService.serviceName);
-                // Log the image path for debugging
                 const serviceImages = [
-                  "/images/portfolio-images/acrep1.jpg",
-                  "/images/portfolio-images/lift1.jpg",
-                  "/images/portfolio-images/elecpanel1.jpg",
-                  "/images/portfolio-images/bathplumb1.jpg",
-                  "/images/portfolio-images/kitctiling1.jpg",
-                  "/images/portfolio-images/intpain1.jpg",
-                  "/images/portfolio-images/woodfloor1.jpg",
-                  "/images/portfolio-images/falseceil1.jpg",
-                  "/images/portfolio-images/bathplumb1.jpg", // fallback for sanitary
-                  "/images/portfolio-images/builclean1.jpg", // fallback for plaster
-                  "/images/portfolio-images/builclean1.jpg",
+                  `${import.meta.env.BASE_URL}images/portfolio-images/acrep1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/lift1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/elecpanel1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/kitctiling1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/intpain1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/woodfloor1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`, // fallback for sanitary
+                  `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`, // fallback for plaster
+                  `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`,
                 ];
-                console.log('Service index:', relatedIndex, 'Image path:', serviceImages[relatedIndex]);
                 const relatedImage = serviceImages[relatedIndex] || '';
                 return (
                   <MotionWrapper key={index} delay={index * 0.1}>
                     <Link to={`/services/${relatedIndex}`} className="block h-full">
                       <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 h-full transform hover:-translate-y-1">
-                        <div className="w-full h-48 overflow-hidden">
-                          <div 
-                            className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
-                            style={{ backgroundImage: `url(${relatedImage})` }}
-                            onError={(e) => {
-                              // If image fails to load, use a fallback
-                              const target = e.target as HTMLElement;
-                              target.style.backgroundColor = '#f3f4f6';
-                            }}
-                          >
-                            <img 
-                              src={relatedImage} 
-                              alt={relatedService.serviceName}
-                              className="w-full h-full object-cover opacity-0"
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.style.display = 'none';
-                              }}
-                            />
-                          </div>
+                        <div className="w-full h-48 overflow-hidden flex items-center justify-center bg-gray-100">
+                          <img 
+                            src={relatedImage} 
+                            alt={relatedService.serviceName}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
                         <div className="p-6">
                           <h3 className="text-xl font-semibold text-khum-primary mb-3">{relatedService.serviceName}</h3>
