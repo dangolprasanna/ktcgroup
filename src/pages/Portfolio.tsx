@@ -14,55 +14,55 @@ const Portfolio = () => {
     {
       id: 1,
       title: "Air Conditioning Installation",
-      image: "/images/portfolio-images/acrep1.jpg", 
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/acrep1.jpg`,
       category: "air-conditioning"
     },
     {
       id: 2,
       title: "Commercial Building Cleaning",
-      image: " /images/portfolio-images/builclean1.jpg",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`,
       category: "cleaning"
     },
     {
       id: 3,
       title: "Bathroom Plumbing Renovation",
-      image: "/images/portfolio-images/bathplumb1.jpg",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`,
       category: "plumbing"
     },
     {
       id: 4,
       title: "Interior Painting Project",
-      image: "/images/portfolio-images/intpain1.jpg",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/intpain1.jpg`,
       category: "painting"
     },
     {
       id: 5,
       title: "Electrical Panel Installation",
-      image: "/images/portfolio-images/elecpanel1.jpg",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/elecpanel1.jpg`,
       category: "electrical"
     },
     {
       id: 6,
       title: "Kitchen Tiling Work",
-      image: "/images/portfolio-images/kitctiling1.jpg",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/kitctiling1.jpg`,
       category: "tiling"
     },
     {
       id: 7,
       title: "Office Cleaning Service",
-      image: "/images/portfolio-images/officclean1.jpg",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/officclean1.jpg`,
       category: "cleaning"
     },
     {
       id: 8,
       title: "Wooden Flooring Installation",
-      image: "/images/portfolio-images/woodfloor1.jpg",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/woodfloor1.jpg`,
       category: "carpentry"
     },
     {
       id: 9,
       title: "False Ceiling Installation",
-      image: "/images/portfolio-images/falseceil1.jpg",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
       category: "ceiling"
     }
   ];

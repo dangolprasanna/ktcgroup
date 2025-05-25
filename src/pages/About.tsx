@@ -85,7 +85,7 @@ const About = () => {
                 {/* Placeholder for company image */}
                 <div className="w-full h-full bg-gradient-to-br from-khum-primary to-khum-secondary flex items-center justify-center">
                   <img
-                    src="/images/aboutus-images/aboutus1.jpg"
+                    src={`${import.meta.env.BASE_URL}images/aboutus-images/aboutus1.jpg`}
                     alt="Company Team"
                     className="object-cover w-full h-full rounded-xl shadow-lg"
                   />

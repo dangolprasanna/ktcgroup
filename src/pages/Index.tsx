@@ -47,7 +47,7 @@ const Index = () => {
           <path d="M6.6 15.6A2 2 0 1 0 10 17v-5" />
         </svg>
       ),
-      image: "/images/serviceimages/acrepair.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/acrepair.jpg`
     },
     {
       title: "Lifts & Escalators Contracting",
@@ -76,7 +76,7 @@ const Index = () => {
           <circle cx="12" cy="12" r="5" />
         </svg>
       ),
-      image: "/images/serviceimages/lift.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/lift.jpg`
     },
     {
       title: "Electricity Transmission & Control Equipment Installation",
@@ -105,7 +105,7 @@ const Index = () => {
           <circle cx="12" cy="12" r="5" />
         </svg>
       ),
-      image: "/images/serviceimages/electricity.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/electricity.jpg`
     },
     {
       title: "Plumbing & Sanitary Installation",
@@ -139,7 +139,7 @@ const Index = () => {
           <path d="M19 19v3" />
         </svg>
       ),
-      image: "/images/serviceimages/plumbing.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/plumbing.jpg`
     },
     {
       title: "Floor & Wall Tiling Works",
@@ -164,7 +164,7 @@ const Index = () => {
           <path d="M18 16h4" />
         </svg>
       ),
-      image: "/images/serviceimages/tiling.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/tiling.jpg`
     },
     {
       title: "Painting Contracting",
@@ -189,7 +189,7 @@ const Index = () => {
           <path d="M18 16h4" />
         </svg>
       ),
-      image: "/images/serviceimages/painting.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/painting.jpg`
     },
     {
       title: "Carpentry & Wood Flooring Works",
@@ -210,7 +210,7 @@ const Index = () => {
           <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      image: "/images/serviceimages/carpentry.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/carpentry.jpg`
     },
     {
       title: "False Ceiling & Light Partitions Installation",
@@ -231,7 +231,7 @@ const Index = () => {
           <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      image: "/images/serviceimages/false.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/false.jpg`
     },
     {
       title: "Sanitary Installation & Pipes Repairing",
@@ -252,7 +252,7 @@ const Index = () => {
           <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      image: "/images/serviceimages/sanitary.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/sanitary.jpg`
     },
     {
       title: "Plaster Works",
@@ -273,7 +273,7 @@ const Index = () => {
           <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      image: "/images/serviceimages/plaster.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/plaster.jpg`
     },
     {
       title: "Building Cleaning Services",
@@ -294,7 +294,7 @@ const Index = () => {
           <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      image: "/images/serviceimages/buildingcleaning.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/buildingcleaning.jpg`
     }
   ];
 
@@ -322,10 +322,10 @@ const Index = () => {
 
   // Sample project images (show 4 real portfolio images)
   const projectImages = [
-    { src: '/images/portfolio-images/acrep1.jpg', alt: 'AC Installation Project' },
-    { src: '/images/portfolio-images/elecpanel1.jpg', alt: 'Electrical Installation' },
-    { src: '/images/portfolio-images/bathplumb1.jpg', alt: 'Plumbing Work' },
-    { src: '/images/portfolio-images/builclean1.jpg', alt: 'Building Cleaning' },
+    { src: `${import.meta.env.BASE_URL}images/portfolio-images/acrep1.jpg`, alt: 'AC Installation Project' },
+    { src: `${import.meta.env.BASE_URL}images/portfolio-images/elecpanel1.jpg`, alt: 'Electrical Installation' },
+    { src: `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`, alt: 'Plumbing Work' },
+    { src: `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`, alt: 'Building Cleaning' },
   ];
 
   // Company features

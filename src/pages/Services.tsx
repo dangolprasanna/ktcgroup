@@ -29,7 +29,7 @@ const Services = () => {
           <path d="M6.6 15.6A2 2 0 1 0 10 17v-5" />
         </svg>
       ),
-      image:  " /images/serviceimages/acrepair.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/acrepair.jpg`
     },
     {
       title: "Lifts & Escalators Contracting",
@@ -60,7 +60,7 @@ const Services = () => {
           <path d="M8 14h.01" />
         </svg>
       ),
-      image: "/images/serviceimages/lift.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/lift.jpg`
     },
     {
       title: "Electricity Transmission & Control Equipment Installation",
@@ -89,7 +89,7 @@ const Services = () => {
           <circle cx="12" cy="12" r="5" />
         </svg>
       ),
-      image: "/images/serviceimages/electricity.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/electricity.jpg`
     },
     {
       title: "Plumbing & Sanitary Installation",
@@ -123,7 +123,7 @@ const Services = () => {
           <path d="M19 19v3" />
         </svg>
       ),
-      image: "/images/serviceimages/plumbing.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/plumbing.jpg`
     },
     {
       title: "Floor & Wall Tiling Works",
@@ -151,7 +151,7 @@ const Services = () => {
           <path d="m8 6 8 8" />
         </svg>
       ),
-      image: "/images/serviceimages/tiling.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/tiling.jpg`
     },
     {
       title: "Painting Contracting",
@@ -176,7 +176,7 @@ const Services = () => {
           <path d="M18 16h4" />
         </svg>
       ),
-      image: "/images/serviceimages/painting.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/painting.jpg`
     },
     {
       title: "Carpentry & Wood Flooring Works",
@@ -200,7 +200,7 @@ const Services = () => {
           <path d="M5 10a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4" />
         </svg>
       ),
-      image: "/images/serviceimages/carpentry.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/carpentry.jpg`
     },
     {
       title: "False Ceiling & Light Partitions Installation",
@@ -223,7 +223,7 @@ const Services = () => {
           <path d="M8 22v-2c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v2H8Z" />
         </svg>
       ),
-      image: "/images/serviceimages/false.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/false.jpg`
     },
     {
       title: "Sanitary Installation & Pipes Repairing",
@@ -244,7 +244,7 @@ const Services = () => {
           <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
         </svg>
       ),
-      image: "/images/serviceimages/sanitary.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/sanitary.jpg`
     },
     {
       title: "Plaster Works",
@@ -272,7 +272,7 @@ const Services = () => {
           <path d="m8 6 8 8" />
         </svg>
       ),
-      image: "/images/serviceimages/plaster.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/plaster.jpg`
     },
     {
       title: "Building Cleaning Services",
@@ -303,7 +303,7 @@ const Services = () => {
           <path d="M8 14h.01" />
         </svg>
       ),
-      image: "/images/serviceimages/buildingcleaning.jpg"
+      image: `${import.meta.env.BASE_URL}images/serviceimages/buildingcleaning.jpg`
     },
   ];
 

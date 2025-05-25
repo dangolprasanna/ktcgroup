@@ -29,7 +29,7 @@ const NavBar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/images/Home-images/KHUM.png" 
+              src={`${import.meta.env.BASE_URL}images/Home-images/KHUM.png`} 
               alt="KHUM Technical and Cleaning Services" 
               className="h-16 md:h-20 w-auto"
             />
