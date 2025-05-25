@@ -9,7 +9,7 @@ const Services = () => {
   const services = [
     {
       title: "Air-Conditioning, Ventilations & Air Filtration Systems",
-      description: "Professional installation, repair, and maintenance of air conditioning units, ventilation systems, and air filtration systems for optimal indoor air quality and comfort. Our certified technicians handle all types of AC systems for residential and commercial properties.",
+      description: "Professional installation, repair, and maintenance of air conditioning units, ventilation systems, and air filtration systems for optimal indoor air quality and comfort.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const Services = () => {
     },
     {
       title: "Lifts & Escalators Contracting",
-      description: "Expert installation, maintenance, and repair services for elevators, lifts, and escalators. We ensure safe and efficient vertical transportation systems in commercial and residential buildings, complying with all safety regulations and standards.",
+      description: "Expert installation, maintenance, and repair services for elevators, lifts, and escalators. We ensure safe and efficient vertical transportation systems in commercial and residential buildings.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ const Services = () => {
     },
     {
       title: "Electricity Transmission & Control Equipment Installation",
-      description: "Comprehensive electrical services including installation, repair, and maintenance of electrical systems, wiring, circuit breakers, panels, and control equipment. Our licensed electricians ensure safe and efficient electrical systems for your property.",
+      description: "Comprehensive electrical services including installation, repair, and maintenance of electrical systems, wiring, circuit breakers, panels, and control equipment.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -204,7 +204,7 @@ const Services = () => {
     },
     {
       title: "False Ceiling & Light Partitions Installation",
-      description: "Professional installation of false ceilings, drywall partitions, and light partition systems. We create functional and aesthetically pleasing spaces with precise installation of suspended ceilings and partitions for residential and commercial properties.",
+      description: " We create functional and aesthetically pleasing spaces with precise installation of suspended ceilings and partitions for residential and commercial properties accordingly.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -227,7 +227,7 @@ const Services = () => {
     },
     {
       title: "Sanitary Installation & Pipes Repairing",
-      description: "Comprehensive sanitary and pipe repair services including fixing leaks, replacing damaged pipes, unclogging drains, and installing new sanitary fixtures. We ensure proper water flow and prevent damage from leaks and blockages.",
+      description: "Comprehensive sanitary and pipe repair services including fixing leaks, replacing damaged pipes, unclogging drains, and installing new sanitary fixtures ensuring proper water flow and prevening damage.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -276,7 +276,7 @@ const Services = () => {
     },
     {
       title: "Building Cleaning Services",
-      description: "Comprehensive cleaning services for residential and commercial buildings, including deep cleaning, regular maintenance cleaning, post-construction cleaning, and specialized cleaning services. We use professional equipment and eco-friendly products to ensure hygiene and cleanliness.",
+      description: "Comprehensive cleaning services for residential and commercial buildings, including deep cleaning, regular maintenance cleaning, post-construction cleaning, and specialized cleaning services accordingly.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -18,7 +18,7 @@ const ServiceCard = ({ title, description, icon, link = "/services", image, serv
   
   return (
     <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }} className="h-[450px]">
-      <Card className="border-0 shadow-sm hover:shadow-md h-full transition-shadow overflow-hidden flex flex-col">
+      <Card className="border-0 shadow-sm hover:shadow-md h-full min-h-[450px] max-h-[450px] transition-shadow overflow-hidden flex flex-col">
         <div className="w-full h-44 shrink-0 overflow-hidden">
           {image ? (
             <div 
@@ -33,15 +33,15 @@ const ServiceCard = ({ title, description, icon, link = "/services", image, serv
             </div>
           )}
         </div>
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col flex-1 min-h-0">
           <CardHeader className="flex-none space-y-3 py-4">
             <div className="w-12 h-12 rounded-full bg-khum-primary/10 flex items-center justify-center text-khum-primary">
               {icon}
             </div>
             <CardTitle className="text-xl text-khum-primary">{title}</CardTitle>
           </CardHeader>
-          <CardContent className="flex-1 overflow-hidden py-2">
-            <CardDescription className="text-gray-600 line-clamp-3">{description}</CardDescription>
+          <CardContent className="flex-1 overflow-hidden py-2 flex items-center">
+            <CardDescription className="text-gray-600 line-clamp-3 w-full">{description}</CardDescription>
           </CardContent>
           <CardFooter className="flex-none mt-auto py-4">
             <Button variant="ghost" className="text-khum-secondary hover:text-khum-primary p-0">

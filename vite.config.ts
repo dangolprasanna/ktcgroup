@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/",
+  base: "/khum-clean-tech-dubai/",
   server: {
     host: "::",
     port: 8080,
