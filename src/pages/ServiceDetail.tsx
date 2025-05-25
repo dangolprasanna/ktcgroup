@@ -30,6 +30,26 @@ const ServiceDetail = () => {
     setLoading(false);
   }, [id]);
 
+  // Determine the main image for the service detail
+  const portfolioImages = [
+    `${import.meta.env.BASE_URL}images/portfolio-images/acrep1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/lift1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/elecpanel1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/kitctiling1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/intpain1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/woodfloor1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
+    `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`, // fallback for sanitary
+    `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`, // fallback for plaster
+    `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`,
+  ];
+  const serviceIndex = id && !isNaN(parseInt(id)) ? parseInt(id) : -1;
+  const mainImage =
+    serviceIndex >= 0 && serviceIndex < portfolioImages.length
+      ? portfolioImages[serviceIndex]
+      : `https://source.unsplash.com/1200x800/?${encodeURIComponent(service?.serviceName.split(' ')[0])}`;
+
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
   }
@@ -137,7 +157,7 @@ const ServiceDetail = () => {
                     transition={{ duration: 0.5 }}
                   >
                     <img 
-                      src={service.image || `https://source.unsplash.com/1200x800/?${encodeURIComponent(service.serviceName.split(' ')[0])}`}
+                      src={mainImage}
                       alt={service.serviceName}
                       className="w-full h-full object-cover"
                       onError={(e) => {
@@ -232,17 +252,17 @@ const ServiceDetail = () => {
                 const relatedIndex = servicesData.findIndex(s => s.serviceName === relatedService.serviceName);
                 // Log the image path for debugging
                 const serviceImages = [
-                  `${import.meta.env.BASE_URL}images/serviceimages/acrepair.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/lift.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/electricity.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/plumbing.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/tiling.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/painting.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/carpentry.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/false.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/sanitary.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/plaster.jpg`,
-                  `${import.meta.env.BASE_URL}images/serviceimages/buildingcleaning.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/acrep1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/lift1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/elecpanel1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/kitctiling1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/intpain1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/woodfloor1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
+                  `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`, // fallback for sanitary
+                  `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`, // fallback for plaster
+                  `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`,
                 ];
                 console.log('Service index:', relatedIndex, 'Image path:', serviceImages[relatedIndex]);
                 const relatedImage = serviceImages[relatedIndex] || '';
