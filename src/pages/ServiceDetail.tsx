@@ -255,7 +255,7 @@ const ServiceDetail = () => {
                   `${import.meta.env.BASE_URL}images/portfolio-images/woodfloor1.jpg`,
                   `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
                   `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`, // fallback for sanitary
-                  `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`, // fallback for plaster
+                  `${import.meta.env.BASE_URL}images/portfolio-images/plaster1.jpg`, // fallback for plaster
                   `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`,
                 ];
                 const relatedImage = serviceImages[relatedIndex] || '';
