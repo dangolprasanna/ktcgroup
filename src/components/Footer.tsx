@@ -142,7 +142,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <a href="#" className="text-gray-400 hover:text-khum-secondary transition-colors">
+            <a href="https://www.instagram.com/khumtechnicalandclening/profilecard/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-khum-secondary transition-colors">
               <span className="sr-only">Instagram</span>
               <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path 
