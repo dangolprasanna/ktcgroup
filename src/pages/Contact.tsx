@@ -151,16 +151,15 @@ const Contact = () => {
                     <strong>Company Name:</strong> KHUM TECHNICAL AND CLEANING
                     SERVICES L.L.C S.O.C
                   </li>
-                              <li>
-                    <strong>Founder:</strong> INU THAPA
-                  </li>
-                                  <li>
-                    <strong>Director:</strong> Mr. SAFDAR SAEED
+                  <li>
+                    <strong>Managing Director:</strong> KHUM PRASAD BHANDARI
                   </li>
                   <li>
-                    <strong>Managing Director:</strong> Mr. KHUM PRASAD BHANDARI
+                    <strong>Director:</strong> INU THAPA
                   </li>
-
+                  <li>
+                    <strong>Director:</strong> SAFDAR SAEED
+                  </li>
                 </ul>
               </div>
             </div>
