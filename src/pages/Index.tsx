@@ -27,6 +27,30 @@ const Index = () => {
   const featuredServices = [
     // Top 4 prioritized services
     {
+      title: "Glass Cleaning",
+      description:
+        "Professional glass cleaning services for residential and commercial buildings. We use specialized equipment and eco-friendly products to ensure streak-free, sparkling windows and glass surfaces.",
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-glass-cleaning"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M8 8l8 8" />
+          <path d="M16 8l-8 8" />
+        </svg>
+      ),
+      image: `${import.meta.env.BASE_URL}images/serviceimages/glassclean.jpg`,
+    },
+    {
       title: "Air-Conditioning, Ventilations & Air Filtration Systems",
       description:
         "Professional installation, repair, and maintenance of air conditioning units, ventilation systems, and air filtration systems for optimal indoor air quality and comfort. Our certified technicians handle all types of AC systems for residential and commercial properties.",
