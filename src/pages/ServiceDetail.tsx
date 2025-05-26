@@ -31,24 +31,10 @@ const ServiceDetail = () => {
   }, [id]);
 
   // Determine the main image for the service detail
-  const portfolioImages = [
-    `${import.meta.env.BASE_URL}images/serviceimages/acrepair.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/lift.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/electricity.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/plumbing.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/tiling.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/painting.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/carpentry.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/false.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/sanitary.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/plaster.jpg`,
-    `${import.meta.env.BASE_URL}images/serviceimages/buildingcleaning.jpg`,
-  ];
-  const serviceIndex = id && !isNaN(parseInt(id)) ? parseInt(id) : -1;
-  let mainImage =
-    serviceIndex >= 0 && serviceIndex < portfolioImages.length
-      ? portfolioImages[serviceIndex]
-      : "/images/portfolio-images/acrep1.jpg";
+  // Use the image from the service data if available, otherwise fallback
+  let mainImage = service && service.image
+    ? (service.image.startsWith('/') ? `${import.meta.env.BASE_URL}${service.image.replace(/^\//, '')}` : service.image)
+    : `${import.meta.env.BASE_URL}images/serviceimages/placeholder.svg`;
 
   if (loading) {
     return <div className="min-h-screen flex items-center justify-center">Loading...</div>;
@@ -245,20 +231,10 @@ const ServiceDetail = () => {
               .slice(0, 3)
               .map((relatedService, index) => {
                 const relatedIndex = servicesData.findIndex(s => s.serviceName === relatedService.serviceName);
-                const serviceImages = [
-                  `${import.meta.env.BASE_URL}images/portfolio-images/acrep1.jpg`,
-                  `${import.meta.env.BASE_URL}images/portfolio-images/lift1.jpg`,
-                  `${import.meta.env.BASE_URL}images/portfolio-images/elecpanel1.jpg`,
-                  `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`,
-                  `${import.meta.env.BASE_URL}images/portfolio-images/kitctiling1.jpg`,
-                  `${import.meta.env.BASE_URL}images/portfolio-images/intpain1.jpg`,
-                  `${import.meta.env.BASE_URL}images/portfolio-images/woodfloor1.jpg`,
-                  `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
-                  `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`, // fallback for sanitary
-                  `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`, // fallback for plaster
-                  `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`,
-                ];
-                const relatedImage = serviceImages[relatedIndex] || '';
+                // Use the image from the service data, fallback to placeholder if missing
+                let relatedImage = relatedService.image
+                  ? (relatedService.image.startsWith('/') ? `${import.meta.env.BASE_URL}${relatedService.image.replace(/^\//, '')}` : relatedService.image)
+                  : `${import.meta.env.BASE_URL}images/serviceimages/placeholder.svg`;
                 return (
                   <MotionWrapper key={index} delay={index * 0.1}>
                     <Link to={`/services/${relatedIndex}`} className="block h-full">

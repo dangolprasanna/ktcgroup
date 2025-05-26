@@ -64,6 +64,30 @@ const Portfolio = () => {
       title: "False Ceiling Installation",
       image: `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
       category: "ceiling"
+    },
+    {
+      id: 10,
+      title: "False Ceiling & Lighting - Real Project 1",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/realimg1.jpg`,
+      category: "ceiling"
+    },
+    {
+      id: 11,
+      title: "False Ceiling & Lighting - Real Project 2",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/realimg2.jpg`,
+      category: "ceiling"
+    },
+    {
+      id: 12,
+      title: "False Ceiling & Lighting - Real Project 3",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/realimg3.jpg`,
+      category: "ceiling"
+    },
+    {
+      id: 13,
+      title: "False Ceiling & Lighting - Real Project 4",
+      image: `${import.meta.env.BASE_URL}images/portfolio-images/realimg4.jpg`,
+      category: "ceiling"
     }
   ];
 
