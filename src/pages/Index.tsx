@@ -8,11 +8,9 @@ import CallToAction from "@/components/CallToAction";
 import ImageGrid from "@/components/ImageGrid";
 import FeaturesSection from "@/components/FeaturesSection";
 import Divider from "@/components/Divider";
-import { motion } from "framer-motion";
 import MotionWrapper from "@/components/MotionWrapper";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import CounterCard from "@/components/CounterCard";
 
 // Define the mapping between featured services and their service IDs
 const serviceIdMapping = {
