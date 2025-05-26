@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import AnimatedCounter from "./AnimatedCounter";
 
 const Hero = () => {
   // Stats for the counter section
@@ -188,15 +189,23 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          {stats.map((stat, index) => (
-            <div 
-              key={index} 
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/10"
-            >
-              <h3 className="text-3xl font-bold text-white mb-1">{stat.value}</h3>
-              <p className="text-gray-200 text-sm">{stat.label}</p>
-            </div>
-          ))}
+          {stats.map((stat, index) => {
+            // Extract number and suffix (e.g., 500+)
+            const match = stat.value.match(/(\d+)(\D*)/);
+            const target = match ? parseInt(match[1]) : 0;
+            const suffix = match ? match[2] : '';
+            return (
+              <div 
+                key={index} 
+                className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/10"
+              >
+                <h3 className="text-3xl font-bold text-white mb-1">
+                  <AnimatedCounter target={target} duration={2000} suffix={suffix} />
+                </h3>
+                <p className="text-gray-200 text-sm">{stat.label}</p>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </div>
