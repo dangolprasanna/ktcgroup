@@ -19,17 +19,14 @@ const ServiceCard = ({ title, description, icon, link = "/services", image, serv
   
   return (
     <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }} className="h-[450px]">
-      <Card className="border-0 shadow-sm hover:shadow-md h-full min-h-[450px] max-h-[450px] transition-shadow overflow-hidden flex flex-col">
-        <div className="w-full h-44 shrink-0 overflow-hidden">
+      <Card className="border-0 shadow-sm hover:shadow-md h-full min-h-[500px] max-h-[950px] transition-shadow overflow-hidden flex flex-col">
+        <div className="w-full shrink-0 overflow-hidden">
           {image ? (
             <OptimizedImage
               src={image.replace(import.meta.env.BASE_URL, '/')}
               alt={title}
-              className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+              className="w-50 object-center transition-transform duration-500 hover:scale-105"
               quality="medium"
-              width={400}
-              height={300}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             />
           ) : (
             <div className="w-full h-full bg-khum-primary/5 flex items-center justify-center">
@@ -46,10 +43,12 @@ const ServiceCard = ({ title, description, icon, link = "/services", image, serv
             </div>
             <CardTitle className="text-xl text-khum-primary">{title}</CardTitle>
           </CardHeader>
-          <CardContent className="flex-1 overflow-hidden py-2 flex items-center">
-            <CardDescription className="text-gray-600 line-clamp-3 w-full">{description}</CardDescription>
+          <CardContent className="flex-1 overflow-visible py-2 px-2">
+            <CardDescription className="hidden px-4 lg:block text-gray-600 w-full text-sm leading-relaxed line-clamp-3">
+              {description}
+            </CardDescription>
           </CardContent>
-          <CardFooter className="flex-none mt-auto py-4">
+          {/* <CardFooter className="mt-auto pt-2 pb-4 px-4">
             <Button variant="ghost" className="text-khum-secondary hover:text-khum-primary p-0">
               <Link to={serviceLink} className="flex items-center">
                 Learn More
@@ -69,7 +68,7 @@ const ServiceCard = ({ title, description, icon, link = "/services", image, serv
                 </svg>
               </Link>
             </Button>
-          </CardFooter>
+          </CardFooter> */}
         </div>
       </Card>
     </motion.div>

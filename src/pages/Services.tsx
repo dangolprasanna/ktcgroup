@@ -12,7 +12,7 @@ const Services = () => {
   const defaultServices = [
     {
       title: "Glass Cleaning",
-      description: "Professional glass cleaning services for residential and commercial buildings. We ensure spotless, streak-free windows and facades using safe and effective cleaning methods. (Image coming soon)",
+      description: "Professional glass cleaning services for residential and commercial buildings. We ensure spotless, streak-free windows and facades using safe and effective cleaning methods.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"

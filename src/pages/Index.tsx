@@ -27,7 +27,7 @@ const Index = () => {
     {
       title: "Glass Cleaning",
       description:
-        "Professional glass cleaning services for residential and commercial buildings. We use specialized equipment and eco-friendly products to ensure streak-free, sparkling windows and glass surfaces.",
+        "Professional glass cleaning services using specialized equipment and eco-friendly products for streak-free, sparkling windows and glass surfaces.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const Index = () => {
     {
       title: "Lifts & Escalators Contracting",
       description:
-        "Expert installation, maintenance, and repair services for elevators, lifts, and escalators. We ensure safe and efficient vertical transportation systems in commercial and residential buildings, complying with all safety regulations and standards.",
+        "Expert installation, maintenance, and repair services for elevators and escalators. We ensure safe and efficient vertical transportation systems that comply with all safety standards.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +222,7 @@ const Index = () => {
     {
       title: "Carpentry & Wood Flooring Works",
       description:
-        "Skilled carpentry services including custom woodwork, cabinetry, furniture assembly, and wood flooring installation. Our experienced carpenters create and install beautiful, functional wooden elements for your home or business.",
+        "Expert carpentry services including custom woodwork, cabinetry, and wood flooring installation. We create beautiful and functional wooden elements for your space.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -310,7 +310,7 @@ const Index = () => {
     {
       title: "Building Cleaning Services",
       description:
-        "Comprehensive cleaning services for residential and commercial buildings, including deep cleaning, regular maintenance cleaning, post-construction cleaning, and specialized cleaning services. We use professional equipment and eco-friendly products to ensure hygiene and cleanliness.",
+        "Comprehensive cleaning services including deep cleaning, maintenance, and post-construction cleaning. We use professional equipment and eco-friendly products for optimal results.",
       icon: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -501,19 +501,26 @@ const Index = () => {
             </div>
           </MotionWrapper>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {featuredServices.slice(0, 4).map((service, index) => (
-              <ServiceCard
-                key={index}
-                title={service.title}
-                description={service.description}
-                icon={service.icon}
-                image={service.image}
-                serviceId={serviceIdMapping[service.title]}
-              />
-            ))}
+            {featuredServices
+              .filter(service => [
+                "Glass Cleaning",
+                "Lifts & Escalators Contracting",
+                "Building Cleaning Services",
+                "Carpentry & Wood Flooring Works"
+              ].includes(service.title))
+              .map((service, index) => (
+                <ServiceCard
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  icon={service.icon}
+                  image={service.image}
+                  serviceId={serviceIdMapping[service.title]}
+                />
+              ))}
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-24">
             <Link to="/services">
               <Button className="rounded-full bg-khum-primary hover:bg-khum-primary/90 px-8">
                 View All Services
@@ -668,28 +675,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Counter Section */}
-      {/* <MotionWrapper>
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <CounterCard label="Clients" target={250} icon={
-                <svg className="h-8 w-8 mx-auto text-khum-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a4 4 0 0 0-3-3.87M9 20H4v-2a4 4 0 0 1 3-3.87m9-7A4 4 0 1 1 7 7a4 4 0 0 1 8 0z" /></svg>
-              } />
-              <CounterCard label="Workers" target={80} icon={
-                <svg className="h-8 w-8 mx-auto text-khum-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0zm6 14v-2a4 4 0 0 0-3-3.87M6 21v-2a4 4 0 0 1 3-3.87" /></svg>
-              } />
-              <CounterCard label="Services" target={15} icon={
-                <svg className="h-8 w-8 mx-auto text-khum-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 21l3-1.5L15 21l-.75-4M4 4h16v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4zm0 0V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2" /></svg>
-              } />
-              <CounterCard label="Satisfaction" target={100} suffix="%" icon={
-                <svg className="h-8 w-8 mx-auto text-khum-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 0 1-5.656 0M9 9h.01M15 9h.01M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z" /></svg>
-              } />
-            </div>
-          </div>
-        </section>
-      </MotionWrapper> */}
 
       <Divider />
 

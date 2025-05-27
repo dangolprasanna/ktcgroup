@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -18,11 +18,15 @@ const NavBar = () => {
     return location.pathname === path;
   };
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
   return (
     <nav
       className={cn(
         "bg-[rgb(255,255,255)] shadow-md sticky top-0 z-50 transition-transform duration-300",
-        !isVisible && "-translate-y-full"
+        !isVisible && !isMobileMenuOpen && "-translate-y-full"
       )}
     >
       <div className="container mx-auto px-4">
@@ -113,8 +117,8 @@ const NavBar = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white py-2 px-4">
-          <div className="flex flex-col space-y-4">
+        <div className="md:hidden bg-white py-2 px-4 h-[80vh] overflow-auto">
+          <div className="flex flex-col landscape:flex-row landscape:items-start landscape:justify-center gap-4 w-full h-full">
             <Link
               to="/"
               className={cn(
