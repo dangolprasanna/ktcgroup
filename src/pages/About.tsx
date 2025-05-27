@@ -2,6 +2,7 @@ import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import { motion } from 'framer-motion';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const About = () => {
   return (
@@ -83,10 +84,14 @@ const About = () => {
               <div className="aspect-w-16 aspect-h-9 bg-gray-200">
                 {/* Placeholder for company image */}
                 <div className="w-full h-full bg-gradient-to-br from-khum-primary to-khum-secondary flex items-center justify-center">
-                  <img
-                    src={`${import.meta.env.BASE_URL}images/aboutus-images/aboutus1.jpg`}
+                  <OptimizedImage
+                    src="/images/aboutus-images/aboutus1.jpg"
                     alt="Company Team"
                     className="object-cover w-full h-full rounded-xl shadow-lg"
+                    quality="medium"
+                    width={800}
+                    height={600}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
               </div>

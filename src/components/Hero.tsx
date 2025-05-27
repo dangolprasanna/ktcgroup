@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import AnimatedCounter from "./AnimatedCounter";
+import OptimizedImage from "./OptimizedImage";
 
 const Hero = () => {
   // Stats for the counter section
@@ -121,11 +122,16 @@ const Hero = () => {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-tl from-khum-primary/50 to-transparent rounded-lg z-10"></div>
-              <img 
-                src={`${import.meta.env.BASE_URL}images/Home-images/homeimg1.jpg`} 
-                alt="KHUM Technical and Cleaning Services" 
+              <OptimizedImage
+                src="/images/Home-images/homeimg1.jpg"
+                alt="KHUM Technical and Cleaning Services"
                 className="rounded-lg shadow-2xl w-full h-[500px] object-cover"
-              /> 
+                quality="hero"
+                priority={true}
+                width={1200}
+                height={500}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
               
               {/* Floating Service Icons */}
               <motion.div 

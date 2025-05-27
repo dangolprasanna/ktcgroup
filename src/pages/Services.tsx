@@ -4,6 +4,7 @@ import CallToAction from '@/components/CallToAction';
 import { motion } from 'framer-motion';
 import MotionWrapper from '@/components/MotionWrapper';
 import { Link, useLocation } from 'react-router-dom'; 
+import OptimizedImage from '@/components/OptimizedImage';
 
 const Services = () => {
   const location = useLocation();
@@ -390,10 +391,12 @@ const Services = () => {
                   <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
                     {service.image && (
                       <div className="w-full h-60 overflow-hidden">
-                        <div 
-                          className="w-full h-full bg-cover bg-center hover:scale-105 transition-transform duration-700"
-                          style={{ backgroundImage: `url(${service.image})` }}
-                        ></div>
+                        <OptimizedImage
+                          src={service.image.replace(import.meta.env.BASE_URL, '/')}
+                          alt={service.title}
+                          className="w-full h-full bg-center bg-cover hover:scale-105 transition-transform duration-700"
+                          quality="medium"
+                        />
                       </div>
                     )}
                     <div className="p-6">

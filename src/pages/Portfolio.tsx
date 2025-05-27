@@ -5,90 +5,103 @@ import CallToAction from '@/components/CallToAction';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
 
-  // Portfolio items data - using placeholder images for now
+  // Portfolio items data - using optimized images
   const portfolioItems = [
     {
       id: 1,
       title: "Air Conditioning Installation",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/acrep1.jpg`,
+      image: "/images/portfolio-images/acrep1.jpg",
       category: "air-conditioning"
     },
     {
       id: 2,
       title: "Commercial Building Cleaning",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/builclean1.jpg`,
+      image: "/images/portfolio-images/builclean1.jpg",
       category: "cleaning"
     },
     {
       id: 3,
       title: "Bathroom Plumbing Renovation",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/bathplumb1.jpg`,
+      image: "/images/portfolio-images/bathplumb1.jpg",
       category: "plumbing"
     },
     {
       id: 4,
       title: "Interior Painting Project",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/intpain1.jpg`,
+      image: "/images/portfolio-images/intpain1.jpg",
       category: "painting"
     },
     {
       id: 5,
       title: "Electrical Panel Installation",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/elecpanel1.jpg`,
+      image: "/images/portfolio-images/elecpanel1.jpg",
       category: "electrical"
     },
     {
       id: 6,
       title: "Kitchen Tiling Work",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/kitctiling1.jpg`,
+      image: "/images/portfolio-images/kitctiling1.jpg",
       category: "tiling"
     },
     {
       id: 7,
       title: "Office Cleaning Service",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/officclean1.jpg`,
+      image: "/images/portfolio-images/officclean1.jpg",
       category: "cleaning"
     },
     {
       id: 8,
       title: "Wooden Flooring Installation",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/woodfloor1.jpg`,
+      image: "/images/portfolio-images/woodfloor1.jpg",
       category: "carpentry"
     },
     {
       id: 9,
       title: "False Ceiling Installation",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/falseceil1.jpg`,
-      category: "ceiling"
+      image: "/images/portfolio-images/falseceil1.jpg",
+      category: "false-ceiling"
     },
     {
       id: 10,
-      title: "False Ceiling & Lighting - Real Project 1",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/realimg1.jpg`,
-      category: "ceiling"
+      title: "Plaster Work Project",
+      image: "/images/portfolio-images/plaster1.jpg",
+      category: "plaster"
     },
     {
       id: 11,
-      title: "False Ceiling & Lighting - Real Project 2",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/realimg2.jpg`,
-      category: "ceiling"
+      title: "Lift Installation Project",
+      image: "/images/portfolio-images/lift1.jpg",
+      category: "lift"
     },
     {
       id: 12,
-      title: "False Ceiling & Lighting - Real Project 3",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/realimg3.jpg`,
-      category: "ceiling"
+      title: "Real Estate Project 1",
+      image: "/images/portfolio-images/realimg1.jpg",
+      category: "real-estate"
     },
     {
       id: 13,
-      title: "False Ceiling & Lighting - Real Project 4",
-      image: `${import.meta.env.BASE_URL}images/portfolio-images/realimg4.jpg`,
-      category: "ceiling"
-    }
+      title: "Real Estate Project 2",
+      image: "/images/portfolio-images/realimg2.jpg",
+      category: "real-estate"
+    },
+    {
+      id: 14,
+      title: "Real Estate Project 3",
+      image: "/images/portfolio-images/realimg3.jpg",
+      category: "real-estate"
+    },
+    {
+      id: 15,
+      title: "Real Estate Project 4",
+      image: "/images/portfolio-images/realimg4.jpg",
+      category: "real-estate"
+    },
   ];
 
   // Filter categories

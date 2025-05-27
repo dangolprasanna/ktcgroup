@@ -1,6 +1,6 @@
-
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import MotionWrapper from "./MotionWrapper";
+import OptimizedImage from "./OptimizedImage";
 
 interface ImageGridProps {
   images: { src: string; alt: string }[];
@@ -13,10 +13,11 @@ const ImageGrid = ({ images }: ImageGridProps) => {
         <MotionWrapper key={index} delay={index * 0.1}>
           <div className="overflow-hidden rounded-lg shadow-sm border border-gray-100 group">
             <AspectRatio ratio={1}>
-              <div 
-                className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-                style={{ backgroundImage: `url(${image.src})` }}
-                aria-label={image.alt}
+              <OptimizedImage
+                src={image.src.replace(import.meta.env.BASE_URL, '/')}
+                alt={image.alt}
+                className="w-full h-full bg-center bg-cover group-hover:scale-105 transition-transform duration-700"
+                quality="medium"
               />
             </AspectRatio>
           </div>

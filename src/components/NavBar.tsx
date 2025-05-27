@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useScrollDirection } from "@/hooks/use-scroll-direction";
+import OptimizedImage from "./OptimizedImage";
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,10 +29,15 @@ const NavBar = () => {
         <div className="flex justify-between items-center py-2">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src={`${import.meta.env.BASE_URL}images/Home-images/KHUM.png`} 
-              alt="KHUM Technical and Cleaning Services" 
+            <OptimizedImage
+              src="/images/Home-images/KHUM.png"
+              alt="KHUM Technical and Cleaning Services"
               className="h-16 md:h-20 w-auto"
+              quality="logo"
+              priority={true}
+              width={200}
+              height={80}
+              sizes="200px"
             />
           </Link>
 

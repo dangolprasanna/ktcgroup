@@ -1,7 +1,7 @@
-
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card } from "@/components/ui/card";
 import MotionWrapper from "./MotionWrapper";
+import OptimizedImage from "./OptimizedImage";
 
 interface GalleryItem {
   id: number;
@@ -22,9 +22,11 @@ const Gallery = ({ items }: GalleryProps) => {
           <Card className="overflow-hidden group shadow-sm border-0">
             <div className="relative">
               <AspectRatio ratio={4/3}>
-                <div 
+                <OptimizedImage
+                  src={item.image}
+                  alt={item.title}
                   className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700"
-                  style={{ backgroundImage: `url(${item.image})` }}
+                  quality="medium"
                 />
               </AspectRatio>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">

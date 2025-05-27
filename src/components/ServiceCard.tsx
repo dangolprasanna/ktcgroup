@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import OptimizedImage from "./OptimizedImage";
 
 interface ServiceCardProps {
   title: string;
@@ -21,9 +22,14 @@ const ServiceCard = ({ title, description, icon, link = "/services", image, serv
       <Card className="border-0 shadow-sm hover:shadow-md h-full min-h-[450px] max-h-[450px] transition-shadow overflow-hidden flex flex-col">
         <div className="w-full h-44 shrink-0 overflow-hidden">
           {image ? (
-            <div 
-              className="w-full h-full bg-cover bg-center transition-transform duration-500 hover:scale-105"
-              style={{ backgroundImage: `url(${image})` }}
+            <OptimizedImage
+              src={image.replace(import.meta.env.BASE_URL, '/')}
+              alt={title}
+              className="w-full h-full object-contain transition-transform duration-500 hover:scale-105"
+              quality="medium"
+              width={400}
+              height={300}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             />
           ) : (
             <div className="w-full h-full bg-khum-primary/5 flex items-center justify-center">
