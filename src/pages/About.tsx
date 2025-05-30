@@ -75,7 +75,7 @@ const About = () => {
                 <ul className="space-y-2 text-gray-600">
                   <li><strong>Company Name:</strong> KHUM TECHNICAL AND CLEANING SERVICES L.L.C S.O.C</li>
                   <li><strong>Company Type:</strong> One Person Limited Liability Company</li>
-                  <li><strong>Location:</strong> Dubai, United Arab Emirates</li>
+                  <li><strong>Location:</strong> Port Saeed, Deira, Dubai, UAE</li>
                 </ul>
               </div>
             </div>

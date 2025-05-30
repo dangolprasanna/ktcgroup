@@ -18,14 +18,14 @@ const ServiceCard = ({ title, description, icon, link = "/services", image, serv
   const serviceLink = serviceId !== undefined ? `/services/${serviceId}` : link;
   
   return (
-    <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }} className="h-[450px]">
-      <Card className="border-0 shadow-sm hover:shadow-md h-full min-h-[500px] max-h-[950px] transition-shadow overflow-hidden flex flex-col">
-        <div className="w-full shrink-0 overflow-hidden">
+    <motion.div whileHover={{ y: -5 }} transition={{ duration: 0.3 }} className="h-full">
+      <Card className="border-0 shadow-sm hover:shadow-md h-full min-h-[400px] transition-shadow overflow-hidden flex flex-col">
+        <div className="w-full h-48 shrink-0 overflow-hidden">
           {image ? (
             <OptimizedImage
               src={image.replace(import.meta.env.BASE_URL, '/')}
               alt={title}
-              className="w-50 object-center transition-transform duration-500 hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
               quality="medium"
             />
           ) : (
@@ -36,15 +36,15 @@ const ServiceCard = ({ title, description, icon, link = "/services", image, serv
             </div>
           )}
         </div>
-        <div className="flex flex-col flex-1 min-h-0">
-          <CardHeader className="flex-none space-y-3 py-4">
+        <div className="flex flex-col flex-1">
+          <CardHeader className="space-y-3 py-4">
             <div className="w-12 h-12 rounded-full bg-khum-primary/10 flex items-center justify-center text-khum-primary">
               {icon}
             </div>
-            <CardTitle className="text-xl text-khum-primary">{title}</CardTitle>
+            <CardTitle className="text-xl text-khum-primary line-clamp-2">{title}</CardTitle>
           </CardHeader>
-          <CardContent className="flex-1 overflow-visible py-2 px-2">
-            <CardDescription className="hidden px-4 lg:block text-gray-600 w-full text-sm leading-relaxed line-clamp-3">
+          <CardContent className="flex-1">
+            <CardDescription className="text-gray-600 text-sm leading-relaxed line-clamp-4">
               {description}
             </CardDescription>
           </CardContent>

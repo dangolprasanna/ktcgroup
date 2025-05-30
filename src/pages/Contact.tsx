@@ -134,7 +134,7 @@ const Contact = () => {
                     <h3 className="text-lg font-semibold mb-1 text-khum-primary">
                       Location
                     </h3>
-                    <p className="text-gray-600">Dubai, United Arab Emirates</p>
+                    <p className="text-gray-600">Port Saeed, Deira, Dubai, UAE</p>
                     <p className="text-gray-500 text-sm">
                       Serving all areas across Dubai
                     </p>

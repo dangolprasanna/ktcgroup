@@ -394,7 +394,7 @@ const Services = () => {
                         <OptimizedImage
                           src={service.image.replace(import.meta.env.BASE_URL, '/')}
                           alt={service.title}
-                          className="w-full h-full bg-center bg-cover hover:scale-105 transition-transform duration-700"
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                           quality="medium"
                         />
                       </div>

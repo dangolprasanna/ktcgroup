@@ -55,10 +55,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li className="text-gray-300">Air-Conditioning & Ventilation</li>
-              <li className="text-gray-300">Electrical Installation</li>
-              <li className="text-gray-300">Plumbing & Sanitary Works</li>
-              <li className="text-gray-300">Painting & Finishing</li>
               <li className="text-gray-300">Building Cleaning Services</li>
+              <li className="text-gray-300">Lifts & Escalators Contracting</li>
+              <li className="text-gray-300">Glass Cleaning</li>
+              <li className="text-gray-300">Carpentry & Wood Flooring Works</li>
             </ul>
           </div>
 
@@ -87,7 +87,7 @@ const Footer = () => {
                 ></path>
               </svg>
               <span className="text-gray-300">
-                Dubai, United Arab Emirates
+                Port Saeed, Deira, Dubai, UAE
               </span>
             </p>
             <p className="flex items-center mb-2">

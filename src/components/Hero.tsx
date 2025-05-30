@@ -7,9 +7,9 @@ import OptimizedImage from "./OptimizedImage";
 const Hero = () => {
   // Stats for the counter section
   const stats = [
-    { label: "Projects Completed", value: "500+" },
-    { label: "Satisfied Clients", value: "300+" },
-    { label: "Team Members", value: "25+" },
+    { label: "Projects Completed", value: "300+" },
+    { label: "Satisfied Clients", value: "200+" },
+    { label: "Team Members", value: "15+" },
     { label: "Years Experience", value: "10+" },
   ];
 
@@ -193,7 +193,7 @@ const Hero = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 relative z-10"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.2, delay: 0.8 }}
         >
           {stats.map((stat, index) => {
             // Extract number and suffix (e.g., 500+)
@@ -206,7 +206,7 @@ const Hero = () => {
                 className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/10"
               >
                 <h3 className="text-3xl font-bold text-white mb-1">
-                  <AnimatedCounter target={target} duration={2000} suffix={suffix} />
+                  <AnimatedCounter target={target} duration={300} suffix={suffix} />
                 </h3>
                 <p className="text-gray-200 text-sm">{stat.label}</p>
               </div>
